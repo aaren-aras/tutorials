@@ -1,0 +1,111 @@
+/* Note: If you were to put css in html doc, put it inside <head> */
+
+.subscribe {
+  vertical-align: top;
+  /* "button" here is called a CSS selector (selects all "button" elements) */
+  background-color: rgb(204, 0, 0);
+  /* "background-color" is a property, "red" is a value */
+  color: white;
+  border: none;
+  border-radius: 2px;
+  /* Roundness of borders */
+  padding-top: 10px;
+  /* Use padding instead of width and height so that button can re-size and accomodate when more/less text added */
+  padding-bottom: 10px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-right: 8px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  /* make sure you put transitions here in OG class, not pseudo-classes  */
+  /* buttons are aligned by their text by default, so use this */
+}
+
+/* applied only when we hover over the button with cursor (":hover" is an example of a CSS "pseudo-class") */
+.subscribe:hover {
+  /* unlike rgba which affects one aspect of element, opacity affects entire element */
+  opacity: 0.8;
+}
+
+/* activates when clicked with cursor */
+.subscribe:active {
+  opacity: 0.5;
+}
+
+.join {
+  background-color: white;
+  color: #065fd4;
+  border-color: #065fd4;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 2px;
+  /* Reduce padding by 1px to compensate for thicker border width */
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 16px;
+  padding-right: 16px;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: background-color 0.15s,
+    color 0.15s;
+}
+
+.join:hover {
+  background-color: #065fd4;
+  color: white;
+}
+
+.join:active {
+  opacity: 0.7;
+}
+
+.tweet {
+  vertical-align: top;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #1d9bf0;
+  color: white;
+  border: none;
+  /* Set to 1/2 of width/height (whichever's smaller) to get rounded shape */
+  border-radius: 18px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 18px;
+  padding-right: 18px;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: box-shadow 0.15s;
+}
+
+.tweet:hover {
+  /* 1st val: horizontal position, 2nd val: vertical position, 3rd val: blur, 4th val: colour */
+  box-shadow: -2px 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.tweet:active {
+  opacity: 0.7;
+}
+
+.new-subscribe {
+  vertical-align: top;
+  font-size: 11.5px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 18px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  transition: background-color 0.1s,
+    opacity 0.1s;
+}
+
+.new-subscribe:hover {
+  background-color: black;
+  opacity: 0.8;
+}
+
+.new-subscribe:active {
+  opacity: 0.6;
+}

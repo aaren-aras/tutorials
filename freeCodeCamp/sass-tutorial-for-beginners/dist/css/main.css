@@ -1,0 +1,73 @@
+/* Course: https://www.youtube.com/watch?v=_a5j7KoflTs */
+/* SCSS PARTIAL (FILES): Contain little snippets of css that you can include in other sass files (modularize your CSS and make it easier to maintain!) */
+/* simply put underscore (_) at front to declare scss file as a partial: tells compiler to ignore this file (i.e., not generate .css file for it) */
+/* generally speaking, put imports at top of file; don't need underscore (_) or extension (.scss)! */
+/* Reset margin and padding like super simple dev did for the parent class! This file accomplishes only that */
+/* CSS Vendor prefixes (way for browsers to give access to new css features that're not yet stable) should be auto-added to compieled .css, but they aren't right now?? */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+} /* alt-shift-down arrow to duplicate line on next line */
+/* WITH SCSS: scss variables are 100% browser compatible since compiler turns it into VALUES, not CSS  */
+/* You can create map (key-value pairs) of font weights, colours, ... */
+/* don't forget semicolon */
+/* Don't modify the CSS file! */
+/* Variables: CSS has them now, but SCSS had it waaay before; CSS variable browser compatibility is 90% */
+/* WITH CSS */
+/* :root targets the highest-level "parent" element in DOM */
+/*
+:root { 
+  --primary-colour: #272727;
+  --accent-colour: #ff652f;
+  --text-colour: #fff; 
+}
+*/
+/* MIXINS: Similar to functions, reusable chunk of code; should be used to define styles */
+/* default value "true" for parameter "$light-theme */
+/* mixinizing CSS media queries (allows content rendering to adapt to different conditions, e.g., screen res) */
+/* FUNCTIONS! Should be used to compute and return values */
+body {
+  /* lets you combine multiple "background"-related properties onto one line (e.g., "background: #fff url("image_tree.png") no-repeat right top;") */
+  background: #272727;
+  color: #fff;
+}
+
+/* NESTING */
+/* Be careful with too much nesting; uses reusable classes as well */
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  /* in CSS, you would have to do calc(80% - 40%); in CSS you can do calc(80% - 400px) but in SCSS you can't do 80% - 400px (can't mix units) */
+  width: 40%;
+  /* top and bot to 0, left and right to auto */
+  margin: 0 auto;
+  /* interpolation (.main): we don't just want .main__paragraph, we want everything before it (i.e., "width: 80%", "margin: 0 auto")*/
+  /* instead of .main__paragraph (& = .main, i.e., parent class selector) */
+  /* EXTENDing styles from main__paragraph1 to main__paragraph2 to avoid copy-paste code! */
+  /* what do we want site to do when viewport width <800px (i.e., mobile user)? */
+}
+.main .main__paragraph1, .main .main__paragraph2 {
+  font-weight: 700;
+}
+.main .main__paragraph1:hover, .main .main__paragraph2:hover {
+  color: pink;
+}
+.main .main__paragraph2:hover {
+  color: #ff652f;
+}
+@media (max-width: 800px) {
+  .main {
+    flex-direction: column;
+  }
+}
+
+.light {
+  /* don't need to say "$light-theme" */
+  /* if $light-theme is true */
+  /* lighten() (built-in sass function) at 100% inverts the colour entirely */
+  background: white;
+  color: black;
+}/*# sourceMappingURL=main.css.map */

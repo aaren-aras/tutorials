@@ -1,0 +1,183 @@
+/* 9a */
+.red-square {
+  background-color: red;
+  margin-bottom: 25px;
+  width: 75px;
+  height: 75px;
+}
+
+/* 9b */
+.green-circle {
+  background-color: green;
+  border-radius: 37.5px;
+  margin-bottom: 25px;
+  width: 75px;
+  height: 75px;
+}
+
+/* 9c */
+.div {
+  display: inline-block;
+  font-family: Helvetica;
+  font-size: 15px;
+  padding-top: 0px;
+  padding-bottom: 25px;
+  padding-left: 15px;
+  padding-right: 120px;
+  border: solid;
+  border-width: 0.65px;
+  margin-bottom: 25px;
+  margin-right: 25px;
+}
+
+/* 9d */
+.youtube {
+  display: inline-block;
+  vertical-align: top;
+  font-family: Arial;
+  background-color: rgba(0, 0, 0, 0.85);
+  padding-top: 10px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.header {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  margin-top: 5px;
+}
+
+.text {
+  font-size: 13px;
+  color: gray;
+  margin-top: -10px;
+  width: 300px;
+}
+
+/* 9e */
+.twitter {
+  display: inline-block;
+  vertical-align: middle;
+  font-family: Arial;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 12px;
+  padding-right: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 25px;
+  box-shadow: 1px -1px 5px rgb(168, 168, 168);
+}
+
+.profile-pic {
+  display: inline;
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 100px;
+  margin-right: 10px;
+}
+
+.twitter-text {
+  display: inline;
+  font-size: 15px;
+  color: rgb(101, 98, 98);
+  margin-right: 10px;
+  margin-right: 145px;
+}
+
+.twitter-btn {
+  display: inline;
+  font-size: 13px;
+  font-weight: bold;
+  background-color: rgb(29, 155, 240);
+  color: white;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 18px;
+  padding-right: 18px;
+  border: none;
+  border-radius: 25px;
+  margin-right: 15px;
+}
+
+/* 9fg */
+.profile {
+  display: inline-block;
+  font-family: Arial;
+  padding-bottom: 10px;
+  border: none;
+  margin-top: 25px;
+  margin-left: 15px;
+  box-shadow: 1px 1px 5px rgb(168, 168, 168);
+}
+
+.pic {
+  width: 200px;
+  height: 175px;
+  object-fit: cover;
+  margin-bottom: -10px;
+}
+
+.name {
+  font-weight: bold;
+  padding-left: 8px;
+  margin-bottom: -8px;
+}
+
+.mutuals {
+  font-size: 13px;
+  color: gray;
+  padding-left: 8px;
+}
+
+.add-friend {
+  background-color: rgba(3, 95, 215, 0.8);
+  color: white;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 18px;
+  padding-right: 18px;
+  border: none;
+  border-radius: 3px;
+  margin-left: 8px;
+}
+
+/* 9h */
+div {
+  text-align: center; 
+}
+
+.google-logo {
+  width: 200px;
+  margin-top: 50px;
+  margin-left: 10px;
+}
+
+.search-bar {
+  font-size: 15px;
+  width: 350px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-left: 15px;
+  padding-right: 200px;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.google-btn {
+  font-size: 14px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-left: 22px;
+  padding-right: 22px;
+  border: none;
+  margin-right: 10px;
+}

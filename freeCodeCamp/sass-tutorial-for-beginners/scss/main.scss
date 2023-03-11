@@ -1,0 +1,101 @@
+/* Course: https://www.youtube.com/watch?v=_a5j7KoflTs */
+
+/* SCSS PARTIAL (FILES): Contain little snippets of css that you can include in other sass files (modularize your CSS and make it easier to maintain!) */
+/* simply put underscore (_) at front to declare scss file as a partial: tells compiler to ignore this file (i.e., not generate .css file for it) */
+/* generally speaking, put imports at top of file; don't need underscore (_) or extension (.scss)! */
+// @import "./resets", "./variables";
+
+// HOWEVER, @import is outdated now, and @use is preferred! It's namespaced (provide scope, locally to the file) to avoid overwriting
+@use ".resets";
+@use "./variables";
+
+/* Don't modify the CSS file! */
+/* alt-shift-down arrow to duplicate line on next line */
+
+/* Variables: CSS has them now, but SCSS had it waaay before; CSS variable browser compatibility is 90% */
+
+/* WITH CSS */
+/* :root targets the highest-level "parent" element in DOM; more specific than html { }
+since root element is <html> tag at top of index.html */
+/*
+:root { 
+  --primary-colour: #272727;
+  --accent-colour: #ff652f;
+  --text-colour: #fff; 
+}
+*/
+
+/* MIXINS: Similar to functions, reusable chunk of code; should be used to define styles */
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+/* default value "true" for parameter "$light-theme */
+@mixin theme($light-theme: true) {
+  /* if $light-theme is true */
+  @if $light-theme {
+    /* lighten() (built-in sass function) at 100% inverts the colour entirely */
+    background: lighten($primary-colour, 100%);
+    color: darken($text-colour, 100%);
+  } @else {
+  }
+}
+
+/* mixinizing CSS media queries (allows content rendering to adapt to different conditions, e.g., screen res) */
+@mixin mobile {
+  @media (max-width: $mobile-width) {
+    @content;
+  }
+}
+
+/* FUNCTIONS! Should be used to compute and return values */
+@function weight($weight-name) {
+  /* map-get (built-in sass function) searches for key ("$weight-name" parameter), returns value ("$font-weights" in _variables.scss) */
+  @return map-get($font-weights, $weight-name);
+}
+
+body {
+  /* lets you combine multiple "background"-related properties onto one line (e.g., "background: #fff url("image_tree.png") no-repeat right top;") */
+  background: $primary-colour;
+  color: $text-colour;
+}
+
+/* NESTING */
+/* Be careful with too much nesting; uses reusable classes as well */
+
+.main {
+  @include flexCenter(row);
+  /* in CSS, you would have to do calc(80% - 40%); in CSS you can do calc(80% - 400px) but in SCSS you can't do 80% - 400px (can't mix units) */
+  width: 80% - 40%;
+  /* top and bot to 0, left and right to auto */
+  margin: 0 auto;
+  /* interpolation (#{&}): we don't just want .main__paragraph, we want everything before it (i.e., "width: 80%", "margin: 0 auto")*/
+  /* instead of .main__paragraph (& = .main, i.e., parent class selector) */
+  #{&}__paragraph1 {
+    font-weight: weight(bold);
+    &:hover {
+      color: pink;
+    }
+  }
+
+  /* EXTENDing styles from main__paragraph1 to main__paragraph2 to avoid copy-paste code! */
+  #{&}__paragraph2 {
+    @extend .main__paragraph1;
+    &:hover {
+      color: $accent-colour;
+    }
+  }
+
+  /* what do we want site to do when viewport width < 800px (i.e., mobile user)? */
+  @include mobile {
+    flex-direction: column;
+  }
+}
+
+.light {
+  /* don't need to say "$light-theme" */
+  @include theme($light-theme: true);
+}

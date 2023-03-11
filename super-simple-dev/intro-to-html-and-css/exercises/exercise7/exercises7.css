@@ -1,0 +1,124 @@
+* { /* selects all elements */
+  margin-top: 0;
+  margin-bottom: 0; 
+}
+
+/* 7abc */
+.meme {
+  width: 200px;
+  height: 200px; 
+  border-style: solid;
+  border-color: red; 
+  object-fit: contain;
+  object-position: center; 
+  border-radius: 100px; 
+}
+
+/* 7d */
+.textbox {
+  font-size: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 0px; 
+  border: solid; 
+  border-color: grey; 
+  border-width: 0.75px;
+  border-radius: 5px; 
+  margin-right: 25px; 
+  margin-bottom: 50px;
+}
+
+/* 7e */
+.search-bar {
+  font-size: 12px;
+  width: 300px; 
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 150px; 
+  border: none; 
+  border-radius: 15px; 
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3); 
+  margin-right: 25px; 
+}
+
+/* 7f */
+.linkedin {
+  font-family: Arial;
+  margin-top: 0;
+  margin-bottom: 0; 
+}
+
+.email {
+  font-family: Arial; 
+  font-size: 12px; 
+  font-weight: 500; 
+  color: rgb(68, 68, 68);
+  margin-bottom: 8px;  
+}
+
+.email-bar {
+  width: 325px; 
+  padding-top: 6px; 
+  padding-bottom: 6px; 
+  border: solid;
+  border-color: black; 
+  border-width: 1.5px; 
+  border-radius: 2px; 
+  margin-bottom: 18px; 
+}
+
+.agree {
+  font-size: 13px; 
+  color: rgb(68, 68, 68);
+  margin-bottom: 15px; 
+}
+
+.btn {
+  font-size: 18px; 
+  background-color: #0a66c2;
+  color: white; 
+  padding-top: 18px;
+  padding-bottom: 18px;
+  padding-left: 115px;
+  padding-right: 115px; 
+  border: none; 
+  border-radius: 35px; 
+  margin-bottom: 50px; 
+}
+
+/* 7g */
+.twitter {
+  display: inline; /* I cheated xd */ 
+  vertical-align: middle; 
+  font-family: Arial; 
+}
+
+.profile-pic {
+  width: 75px;
+  height: 75px; 
+  object-fit: cover;
+  object-position: center; 
+  border-radius: 100px; 
+  margin-right: 10px; 
+}
+
+.twitter-text {
+  color: rgb(101, 98, 98);
+  margin-right: 10px; 
+  margin-right: 150px; 
+}
+
+.twitter-btn {
+  font-size: 17px;
+  font-weight: bold; 
+  background-color: rgb(29, 155, 240);
+  color: white; 
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 18px;
+  padding-right: 18px; 
+  border: none; 
+  border-radius: 25px; 
+}

@@ -1,0 +1,7 @@
+/* Reset margin and padding like super simple dev did for the parent class! This file accomplishes only that */
+/* CSS Vendor prefixes (way for browsers to give access to new css features that're not yet stable) should be auto-added to compieled .css, but they aren't right now?? */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; 
+}

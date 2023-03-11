@@ -1,0 +1,122 @@
+/* 2a */
+.uber {
+  background-color: black;
+  color: white;
+  width: 110px;
+  height: 35px;
+}
+
+/* 2b */
+.amazon {
+  font-size: 15px;
+  background-color: rgb(255, 216, 20);
+  color: black;
+  border: none;
+  border-radius: 15px;
+  width: 175px;
+  height: 30px;
+}
+
+/* 2c */
+.github {
+  font-size: 13px;
+  font-weight: bold;
+  background-color: rgba(46, 164, 79, 0.88);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  width: 90px;
+  height: 35px;
+}
+
+/* 2d */
+.bootstrap-get-started {
+  font-size: 12px;
+  font-weight: bold;
+  background-color: rgba(121, 82, 179, 0.947);
+  color: white;
+  border: none;
+  border-radius: 3px;
+  width: 100px;
+  height: 40px;
+  margin-right: 6px;
+}
+
+.bootstrap-download {
+  font-size: 12px;
+  font-weight: bold;
+  background-color: white;
+  color: rgb(108, 117, 125);
+  border-color: rgb(108, 117, 125);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 3px;
+  width: 90px;
+  height: 40px;
+}
+
+/* 2e */
+.linkedin-apply {
+  font-size: 14px;
+  font-weight: bold;
+  background-color: rgba(10, 102, 194, 0.93);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  width: 235px;
+  height: 35px;
+  margin-right: 8px;
+}
+
+.linkedin-save {
+  font-size: 14px;
+  font-weight: bold;
+  background-color: white;
+  color: rgba(10, 102, 194, 0.93);
+  border-color: rgba(10, 102, 194, 0.93);
+  border-style: solid;
+  border-width: 1.5px;
+  border-radius: 20px;
+  width: 75px;
+  height: 35px;
+}
+
+/* 2f */
+.link {
+  color: rgb(0, 113, 133);
+}
+
+.product-name {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.price {
+  font-weight: bold;
+  color: rgb(0, 118, 0);
+}
+
+.btn {
+  font-size: 15px;
+  font-weight: 500;
+  /* Not working... How do I change amount of boldness? */
+  border: none;
+  border-radius: 20px;
+  width: 135px;
+  height: 35px;
+  margin-right: 10px;
+}
+
+.add {
+  background-color: rgb(255, 216, 20);
+}
+
+.buy {
+  background-color: rgb(255, 164, 28);
+}
+
+
+
+
+
+

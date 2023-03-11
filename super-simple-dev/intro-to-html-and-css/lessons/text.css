@@ -1,0 +1,53 @@
+p {
+  font-family: Roboto;
+  /* <!-- paragraphs (<p>) come with top and bottom margins by default, soooo reset them! */
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 24px;
+  width: 280px;
+  margin-bottom: 4px;
+  /* Due to CSS specificity (preference of class selector (e.g., "title") over element selector (e.g., <p>)), this margin-bottom value takes priority over "margin-bottom: 0" under p { } */
+}
+
+.stats {
+  font-size: 14px;
+  color: #606060;
+  margin-bottom: 18px;
+}
+
+.author {
+  font-size: 14px;
+  color: #606060;
+  margin-bottom: 18px;
+}
+
+.description {
+  font-size: 14px;
+  line-height: 22px;
+  color: #606060;
+  width: 280px;
+  margin-bottom: 50px;
+}
+
+.apple-text {
+  text-align: center;
+  font-size: 14px;
+  background-color: #e34140;
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 50px;
+}
+
+.shop-link {
+  cursor: pointer;
+}
+
+.shop-link:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    p {
+      /* Font Stack: Arial is the backup font if Roboto doesn't load on a browser for whatever reason */
+      font-family: Roboto, Arial;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .search-bar {
+      display: block;
+      font-size: 20px;
+    }
+
+    .video-preview {
+      display: inline-block;
+      vertical-align: top;
+      width: 300px;
+      margin-right: 15px;
+    }
+
+    .thumbnail-row {
+      margin-bottom: 12px;
+    }
+
+    .thumbnail {
+      width: 300px;
+      /* height adjusts too to maintain same height-width ratio */
+      display: block;
+    }
+
+    .video-info-grid {
+      display: grid;
+      grid-template-columns: 50px 1fr;
+    }
+
+    .pfp {
+      /* Takes up entire space of its <div> container (i.e., 40px as per .channel-pfp)) */
+      width: 100%;
+      border-radius: 50%;
+    }
+
+    .video-title {
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 20px;
+      margin-bottom: 12px;
+    }
+
+    /* targeting both classes */
+    .video-author,
+    .video-stats {
+      font-size: 12px;
+      color: #606060;
+    }
+
+    .video-author {
+      margin-bottom: 4px;
+    }
+  </style>
+</head>
+
+<body>
+  <input class="search-bar" type="text" placeholder="Search"> <!-- Acts as our YouTube search bar -->
+
+  <!-- Nested Layout Technique: Most web designs can be viewed as combinations of vertical and/or horizontal sections inside one another -->
+  <div class="video-preview">
+    <div class="thumbnail-row">
+      <img class="thumbnail" src="thumbnails/thumbnail-1.webp" alt="Channel 1 Thumbnail">
+    </div>
+    <div class="video-info-grid">
+      <div class="channel-pfp">
+        <img class="pfp" src="channel-pfps/channel-1.jpeg" alt="Channel 1 Profile Pic">
+      </div>
+      <div class="video-info">
+        <p class="video-title">Talking Tech and AI with Google CEO Sundar Pichai!</p>
+        <p class="video-author">Marques Brownlee</p>
+        <p class="video-stats">3.4M views &#183; 6 months ago</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="video-preview">
+    <div class="thumbnail-row">
+      <img class="thumbnail" src="thumbnails/thumbnail-2.webp" alt="Channel 2 Thumbnail">
+    </div>
+    <div class="video-info-grid">
+      <div class="channel-pfp">
+        <img class="pfp" src="channel-pfps/channel-2.jpeg" alt="Channel 2 Profile Pic">
+      </div>
+      <div class="video-info">
+        <p class="video-title">Try Not To Laugh Challenge #9</p>
+        <p class="video-author">Markiplier</p>
+        <p class="video-stats">19M views &#183; 4 years ago</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
+
+<!-- "object-fit" and " object-position" are <img>-specific properties -->
+<!-- 3 types of elements in HTML: block (takes up entire line IN THEIR CONTAINER; e.g., <p>, <div>), inline-block (takes up as much space as needed; e.g., <img>, <input>), 
+  text (appear within line of text; e.g., <strong>) -->
+<!-- can change element type with 'display' element, in this case, block -> inline-block -->
+
+<!-- <div> = division; "a box"/"a container"; use span for inline-level (text) organization!, and div for block-level organization! -->
+<!-- divs can contain other elements in em -->
+
+<!-- <div>s have a width of 100% by default, so change 'em for display: inline-block to work -->
+<!-- <img>s overflow by default (i.e., they keep their original size) -->
+
+<!-- `display: inline-block` has some noticeable alignment issues (e.g., 2 elements underneath element of 300px; can't assign one 50px and the other 250px and expect them to fit; comes from
+    space between <div>s in VS Code)-->

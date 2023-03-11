@@ -1,0 +1,63 @@
+<!-- RESOURCES
+  {1} Programming w/ Mosh: https://www.youtube.com/watch?v=qz0aGYrrlhU&t=1709s 
+  {2} SuperSimpleDev: https://www.youtube.com/watch?v=G3e-cpL7ofc
+  {3} W3Schools: https://www.w3schools.com/html/default.asp 
+  {4} MDN Web Docs: https://developer.mozilla.org/en-US/docs/Learn -->
+
+<!-- Hover over keywords for their MDN Web Docs definitions -->
+<!-- Browsers don't care about code formatting in editors/IDEs -->
+
+<!-- HTML is NOT case-sensitive, but conventionally, everything is written in lowercase except 'DOCTYPE' -->
+<!DOCTYPE html>
+<!-- Document Type Declaration: Informs browser that this is an HTML5 document (*REQUIRED 1st line) -->
+<html lang="en">
+
+<head>
+  <title> HTMLification </title>
+  <style> /* Embed CSS b/w these tags */ 
+    img {
+      width: 70px;
+      border-radius: 50px; /* Random tip: Setting border radius to ~1/2 the width nets an ellipse */
+      float: left;
+      margin-right: 10px;
+    }
+
+    /* Properties are applied to specific elements (e.g., p) of specific classes (e.g., name) */
+    body {
+      font-size: 62.5%;
+      font-family: Helvetica;
+    }
+    
+    .name {
+      display: inline; 
+      line-height: 0.75cm;
+
+      font-weight: bold; 
+
+    }
+
+    .handle_date {    
+      display: inline; 
+
+      font-size: 90%;
+
+      color: gray;
+    }
+
+    .tweet {
+      margin-top: -2px;
+
+    }
+    
+
+  </style>
+
+<body>
+  <img src="images/cheesus-crust.jpg" alt="an image of the one and only Cheesus Crust" />
+  <p class="name"> CheeseLouise </p>
+  <p class="handle_date"> @cheesypizzajokes · 19m </p>
+  <p class="tweet"> Wanna hear a pizza joke? </p>
+</body>
+</head>
+
+</html>

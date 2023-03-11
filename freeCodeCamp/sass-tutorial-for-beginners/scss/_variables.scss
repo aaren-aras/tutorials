@@ -1,0 +1,13 @@
+/* WITH SCSS: scss variables are 100% browser compatible since compiler turns it into VALUES, not CSS  */
+$primary-colour: #272727;
+$accent-colour: #ff652f;
+$text-colour: #fff;
+
+/* You can create map (key-value pairs) of font weights, colours, ... */
+$font-weights: (
+  "regular": 400,
+  "medium": 500,
+  "bold": 700,
+); /* don't forget semicolon */
+
+$mobile-width: 800px; 

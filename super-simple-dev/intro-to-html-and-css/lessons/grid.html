@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Practice</title>
+</head>
+
+<body style="padding-bottom: 1000px">
+  <div style="
+    /* Negates a <div>'s innate block property, leaves no space between adjacent <div>s, and generally maintains better alignment */
+    display: grid;
+    /* Defines width of grid's 2 columns */ 
+    grid-template-columns: 100px 100px; 
+  ">
+    <!-- Can write inline CSS with `style` attribute; <style> and .css files are more recommended though -->
+    <div style="background-color: lightblue">div 1</div>
+    <div style="background-color: lightpink;">div <p>text</p>
+    </div>
+  </div>
+
+  <div style="
+    margin-top: 30px; 
+    display: grid;
+    /* Takes any # of values correlating to # of columns in grid */
+    grid-template-columns: 100px 100px 200px; 
+  ">
+    <div style="background-color: lightblue">100 px</div>
+    <div style="background-color: lightpink">100 px<p>text</p>
+    </div>
+    <div style="background-color: lightblue">200 px</div>
+    <!-- 4th element goes to next row since 1x3 grid (as defined above) -->
+    <div style="background-color: lightpink">100 px</div>
+  </div>
+
+  <div style="
+    margin-top: 30px; 
+    display: grid;
+    /* fr = fraction of available space/free space = fractional unit */
+    /* In this case, 1st <div> takes 100px of viewport width, and 2nd <div> takes remainder */
+    grid-template-columns: 100px 1fr; 
+  ">
+    <div style="background-color: lightblue">100 px</div>
+    <div style="background-color: lightpink">1 fr</div>
+  </div>
+
+  <div style="
+    margin-top: 30px; 
+    display: grid;
+    /* In this case, 1st <div> takes 100px of viewport width, and 2nd and 3rd <div>s divide remainder based on _fr:_fr ratio */
+    grid-template-columns: 100px 1fr 2fr; 
+  ">
+    <div style="background-color: lightblue">100 px</div>
+    <div style="background-color: lightpink">1 fr</div>
+    <div style="background-color: lightblue">1 fr</div>
+  </div>
+
+  <div style="
+    margin-top: 30px; 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+    row-gap: 20px;
+    column-gap: 20px; 
+  ">
+    <div style="background-color: lightblue; height: 200px">1 fr</div>
+    <div style="background-color: lightpink; height: 200px">1 fr</div>
+    <div style="background-color: lightblue; height: 200px">1 fr</div>
+    <div style="background-color: lightpink; height: 200px">1 fr</div>
+    <div style="background-color: lightblue; height: 200px">1 fr</div>
+    <div style="background-color: lightpink; height: 200px">1 fr</div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,226 @@
+/* 4a */
+.uber {
+  vertical-align: top;
+  background-color: black;
+  color: white;
+  padding-top: 8.25px;
+  padding-bottom: 8.25px;
+  padding-left: 14px;
+  padding-right: 14px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.uber:hover {
+  opacity: 0.8;
+}
+
+/* 4b */
+.amazon {
+  font-size: 15px;
+  background-color: rgb(255, 216, 20);
+  color: black;
+  padding-top: 6.5px;
+  padding-bottom: 6.5px;
+  padding-left: 49.5px;
+  padding-right: 49.5px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.amazon:hover {
+  /* Add/Subtract the same value to/from each of the three to make the colour essentially lighter/darker */
+  background-color: rgb(240, 201, 5);
+}
+
+/* 4c */
+.github {
+  font-size: 13px;
+  font-weight: bold;
+  background-color: rgba(46, 164, 79, 0.88);
+  color: white;
+  padding-top: 10.25px;
+  padding-bottom: 10.25px;
+  padding-left: 21px;
+  padding-right: 21px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: box-shadow 0.15s;
+}
+
+.github:hover {
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 4d */
+.bootstrap-get-started {
+  font-size: 12px;
+  font-weight: bold;
+  background-color: rgba(121, 82, 179, 0.947);
+  color: white;
+  padding-top: 13.25px;
+  padding-bottom: 13.25px;
+  padding-left: 18px;
+  padding-right: 18px;
+  border: none;
+  border-radius: 3px;
+  margin-right: 6px;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.bootstrap-get-started:hover {
+  background-color: rgba(100, 61, 158, 0.947);
+}
+
+.bootstrap-download {
+  font-size: 12px;
+  font-weight: bold;
+  background-color: white;
+  color: rgb(108, 117, 125);
+  padding-top: 12.25px;
+  padding-bottom: 12.25px;
+  padding-left: 15.25px;
+  padding-right: 15.25px;
+  border-color: rgb(108, 117, 125);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.15s,
+    color 0.15s;
+}
+
+.bootstrap-download:hover {
+  background-color: rgb(108, 117, 125);
+  color: white;
+}
+
+/* 4e */
+.linkedin-apply {
+  font-size: 14px;
+  font-weight: bold;
+  background-color: rgba(10, 102, 194, 0.93);
+  color: white;
+  padding-top: 9.5px;
+  padding-bottom: 9.5px;
+  padding-left: 26.75px;
+  padding-right: 26.75px;
+  border: none;
+  border-radius: 20px;
+  margin-right: 8px;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.linkedin-apply:hover {
+  background-color: rgba(0, 59, 118, 0.93);
+}
+
+.linkedin-save {
+  font-size: 14px;
+  font-weight: bold;
+  background-color: white;
+  color: rgba(10, 102, 194, 0.93);
+  padding-top: 8.25px;
+  padding-bottom: 8.25px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-color: rgba(10, 102, 194, 0.93);
+  border-style: solid;
+  border-width: 1.5px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.15s,
+    border-width 0.15s;
+}
+
+.linkedin-save:hover {
+  background-color: rgba(10, 102, 194, 0.10);
+  border-width: 2px;
+}
+
+/* 4fg were completed in 'buttons.css' */
+/* 4h */
+.btn {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.back {
+  margin-right: 8px;
+}
+
+a {
+  margin-right: 7px;
+}
+
+.next {
+  margin-left: 8px;
+}
+
+/* 4i */
+.stretch {
+  font-size: 15px;
+  background-color: green;
+  color: white;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 14px;
+  padding-right: 14px;
+  border: none;
+  cursor: pointer;
+  transition: padding 0.75s;
+}
+
+.stretch:hover {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 45px;
+  padding-right: 45px;
+}
+
+/* 4j */
+.shadow {
+  font-size: 16px;
+  background-color: green;
+  color: white;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 14px;
+  padding-right: 14px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6);
+}
+
+.shadow:active {
+  box-shadow: none;
+}
+
+/* 4k (*) */
+.num {
+  font-size: 15px;
+  background-color: green;
+  color: white;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border: none;
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: padding 0.15s,
+    margin 0.15s;
+}
+
+.num:hover {
+  padding-left: 25px;
+  /* hover padding (25) = original padding (15) + original margins (10); this along with margin-left/right = 0px ensures elements don't move each other */
+  padding-right: 25px;
+  margin-left: 0px;
+  margin-right: 0px;
+}

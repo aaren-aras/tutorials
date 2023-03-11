@@ -1,0 +1,119 @@
+<!DOCTYPE html> <!-- Type "!", then TAB for this basic HTML boilerplate -->
+
+<html lang="en">
+
+<head>
+    <!-- should have at least first 2 meta elements (give info about webpage) -->
+    <meta charset="UTF-8">
+    <!-- Character set: computers only know binary, so with these, we can map numbers to characters (e.g., ASCII, UTF-8)-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Viewport: visible area of webpage (bigger on desktop than mobile); initial width and zoom factor set here -->
+    <meta name="keywords" content="HTML, CSS">
+    <!-- Heavily used in the past for SEO, but nowadays, don't put too much weight (but can still use of course!)-->
+    <meta name="description" content="...">
+    <!-- will appear under link title when site is searched for on search engines -->
+    <title>Document</title>
+    <style>
+        em {
+            color: purple;
+            font-style: normal;
+        }
+
+        img { /* in real world, sort images into classes and define css rules for specific classes */
+            width: 500px;
+            height: 500px;
+            /* image gets resized and (potentially) cropped to cover ENTIRE containing box  */
+            object-fit:cover; /* there're boxes around every element in html doc (which we don't see); browser uses it to figure out how to display  */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- can also... open select text -> command palette (ctrl shift P) -> use "Emmet: wrap with abbreviation" -> type "em", then bam! wraps selected text with tag -->
+    <p>I love to <em>suck</em> on <em>bornanas</em>!</p>
+    <!-- By default, emphasis text is italics, but don't italicize this way; this is for search engines to extract important info -->
+    <!-- <i> can also be used for italicized, but considered "deprecated" (no longer supported) since HTML's not meant for styling content, just structuring  -->
+    <p> Very neatus how you yeetus the fetus from the veetus onto the <i>meatest</i> reaches </p>
+
+    <p> MmmmMmm yes, precisely, uh huh, <strong>quite</strong></p>
+    <!-- conceptually same to <em> so where it's used depends on CONTEXT (default is bold)-->
+    <!-- like <i>, <b> is deprecated -->
+    <p> munchie <b>bunchie</b></p>
+
+    <!-- Use headings to create structural hierarchy (heading, subheading, subsubheaing, ...), NOT to change text size (that's CSS's job) -->
+    <h1>Heading 1</h1>
+    <!-- Sure, you can have 2 <h1>s, but this'll confuse search engines, so stick with ONE <h1>, representing the main title, then 1 or more <h2>, <h3>,... -->
+    <h2>Heading 2</h2> <!-- use <h2> after, DON'T jump to <h3>, etc. -->
+    <p>Things are being written</p>
+    <h3>Heading 3</h3>
+    <p>More things are being written here</p>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+
+    <p>Mosh does, in fact, enjoy teaching us &lt;HTML&gt; &copy; &diams;</p>
+    <!-- Entity codes: https://www.toptal.com/designers/htmlarrows/symbols/ -->
+
+    <!-- Dummy text: type "Lorem" followed by number of words-->
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt, voluptatum. Perferendis ab, perspiciatis
+        veritatis corporis eaque explicabo, deleniti vel ea enim non voluptatibus exercitationem, ullam pariatur
+        nesciunt et provident? In nisi, unde odio quasi obcaecati veritatis magnam. Quia doloremque quaerat laudantium
+        debitis non atque, neque, odit iusto quo provident veritatis, repellat ipsam. Voluptate itaque id officia quas
+        rem deserunt error, ipsam a aliquam perferendis, possimus sequi dignissimos. Rem saepe amet ipsa alias iure illo
+        sed voluptas cum voluptatum tempore eligendi optio rerum vero, tenetur sequi maxime dicta similique. Aliquam
+        voluptatibus&nbsp;quam dolor error vel ducimus eos illum aspernatur officiis voluptate dolores necessitatibus
+        <!-- nbsp: non-breaking space (to allow certain words to appear on same line)-->
+        deserunt laboriosam explicabo fugit vero ratione fuga, molestiae eum possimus autem veritatis sed! Nostrum
+        blanditiis quas laboriosam sit maxime neque deleniti officia facilis laborum fugit laudantium aspernatur
+        voluptatibus consequatur dolore ipsa officiis tenetur ut eius sed, eos ex at corporis nesciunt! Fugit aperiam
+        nemo eveniet corrupti tempora obcaecati.
+    </p>
+
+    <a href="about.html">About Moi</a> <!-- href = hypertext reference ~= url/link -->
+    <!-- relative url (starts from current file) -->
+    <a href="thing/about2.html">
+        <img src="images/smexy-2019-me.jpg" alt="" />
+    </a>
+    <a href="images/taj-mahal.png" download>Baby Me</a>
+
+    <a href="#section-css">CSS</a> <!-- when clicked, sends user to the <h2> defined as "section-css"!!!-->
+    <h2>HTML</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos non obcaecati perferendis illum! Quis quo
+        deleniti id iure illum facere, placeat expedita exercitationem. Magni, natus distinctio quaerat quae ab sit
+        eligendi quasi reprehenderit quas harum sint placeat perspiciatis enim quod? Nam atque sapiente quaerat eum
+        necessitatibus laboriosam, laudantium, adipisci facere corporis corrupti nulla, magni iusto voluptates sequi!
+        Atque similique fugit culpa ipsum deleniti illo quasi sit eum provident fugiat! Nulla molestias veniam cumque.
+        Molestiae dicta atque tenetur in? Sequi incidunt sunt dolorem officiis eaque enim. Temporibus impedit repellat
+        ut blanditiis sint soluta quidem pariatur ad corporis veniam eveniet, nostrum obcaecati harum necessitatibus aut
+        possimus excepturi asperiores quos nam, in quisquam? Fugit facere quam aut dignissimos amet tenetur mollitia
+        doloribus nam aliquam enim ad expedita culpa consequuntur nesciunt sapiente atque, nemo quos. Harum, quos
+        perferendis? Minus accusantium officiis ullam illo odit doloribus, porro, temporibus quidem harum labore nam
+        exercitationem consequuntur qui. Cupiditate id corrupti quis ut omnis eveniet voluptatum animi eum aspernatur
+        earum natus aperiam in dolorum alias est iure, repudiandae aliquam at fugit harum officiis perferendis? Nisi
+        culpa facere doloribus a autem cumque nostrum. Fugiat, repudiandae. Blanditiis, reiciendis officiis nesciunt
+        asperiores quia ad ex, vel aspernatur doloremque inventore enim eum.</p>
+    <h2 id="section-css">CSS</h2> <!-- id name doesn't really matter, but rather, defining a "fragment" (place on this page) -->
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae amet tempora quam fugiat quasi perspiciatis autem
+        beatae, sed in necessitatibus iste aut quos rerum similique rem hic eaque dolorem esse placeat. Sint eum
+        suscipit sunt reiciendis eaque ipsam possimus pariatur sed? Odit corrupti molestias vero possimus eos
+        repellendus ratione velit laborum, voluptatum sequi iusto nulla minus iste beatae dolor libero incidunt ex
+        aperiam maxime impedit ea provident in. Libero sequi harum doloribus. Dolorum accusantium aut earum officiis
+        error. Officiis nisi, et odio corporis totam ea atque ab, corrupti incidunt esse voluptatum quis in! Cupiditate
+        incidunt nesciunt, vero atque sunt, ratione consequatur consectetur beatae voluptatibus dolore mollitia ipsum
+        similique debitis facilis velit perspiciatis at, aliquam soluta. Dolores asperiores neque accusantium adipisci
+        laudantium quos velit tenetur nulla repudiandae illum temporibus molestias placeat nisi harum dolor, voluptas
+        dignissimos ullam blanditiis! Aperiam illo eaque deserunt sit a, sunt obcaecati dolores, odit totam facilis,
+        libero ducimus voluptates? Consequatur iure ab dolorum ipsam vel consectetur quibusdam saepe debitis a fugit
+        provident corporis voluptas eos odit omnis ea beatae repellendus incidunt quia, dignissimos fuga? Adipisci
+        molestiae debitis suscipit perspiciatis ipsam fugiat veritatis culpa est eveniet accusamus rem nostrum expedita
+        tempore, officia iste, nobis provident tenetur ducimus quod?</p>
+    
+    <a href="#">Jump to top with just # sign!</a>
+    <a href="https://google.com" target="_blank">Google</a> <!-- absolute url to refer to external sites! target="_blank" opens in new tab -->
+    <a href="mailto:aaren.aras@gmail.com">email me papi</a> <!-- opens email creator and prepopulates "receiver" with href email -->
+
+    <img src="images/hot-dog.jpg" alt="Clasped hot dog"> <!-- alt helps blind users and search engine, and in case actual image cant be loaded for any reason -->
+</body>
+
+</html>
