@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox Practice</title>
+</head>
+
+<body>
+  <!-- Can do CSS grid layouts, but more flexible -->
+  <div style="
+    display: flex;
+    /* Aligning elements horizontally (<div>s no longer behave as block elements)  */
+    flex-direction: row;
+    margin-bottom: 50px; 
+  ">
+    <div style="background-color: lightblue">div 1 text</div>
+    <div style="background-color: lightpink">div 2 <p>text</p>
+    </div>
+  </div>
+
+  <div style="
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 50px; 
+  ">
+    <div style="
+      width: 100px; 
+      background-color: lightblue;
+    ">100 px</div>
+    <div style="
+      /* Equivalent to grid's `fr` */
+      flex: 1; 
+      background-color: lightpink
+    ">flex: 1</div>
+  </div>
+
+  <div style="
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 50px;
+  ">
+    <div style="
+      width: 100px; 
+      background-color: lightblue;
+    ">100 px</div>
+    <div style="
+      /* Equivalent to grid's `1fr` */
+      flex: 1; 
+      background-color: lightpink
+    ">flex: 1</div>
+    <div style="
+      /* Equivalent to grid's `2fr` */
+      flex: 2; 
+      width: 100px; 
+      background-color: lightblue;
+    ">flex: 2</div>
+  </div>
+
+</body>
+
+</html>

@@ -6,12 +6,12 @@ p {
 
 .profile-grid {
   display: grid; 
-  grid-template-columns
+  grid-template-columns: 215px 215px 215px; 
+  column-gap: 5px; 
+  align-items: center; 
 }
 
 .profile {
-  display: inline-block !important;
-  vertical-align: top !important; 
   padding-bottom: 10px;
   border: none;
   margin-top: 25px;
@@ -33,13 +33,16 @@ p {
   margin-bottom: 5px;
 }
 
-.mutuals-row {
+.mutuals-grid {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  column-gap: 8px; 
+  align-items: center;
   margin-left: 8px;
   margin-bottom: 10px; 
 }
 
 .mutuals-pic {
-  vertical-align: middle !important; 
   object-fit: cover;
   width: 30px;
   height: 30px;
@@ -48,9 +51,6 @@ p {
 }
 
 .mutuals-count {
-  display: inline-block !important;
-  /* Very slight change, but does align "__ mutual friends" text along the central axis more */ 
-  vertical-align: middle !important; 
   font-size: 14px;
   color: gray;
 }
@@ -60,8 +60,8 @@ p {
   color: white;
   padding-top: 9px;
   padding-bottom: 9px;
-  padding-left: 18px;
-  padding-right: 18px;
+  padding-left: 20px;
+  padding-right: 20px;
   border: none;
   border-radius: 3px;
   margin-left: 8px;
