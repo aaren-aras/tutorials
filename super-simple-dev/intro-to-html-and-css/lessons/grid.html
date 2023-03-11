@@ -14,6 +14,7 @@
     display: grid;
     /* Defines width of grid's 2 columns */ 
     grid-template-columns: 100px 100px; 
+    margin-top: 30px; 
   ">
     <!-- Can write inline CSS with `style` attribute; <style> and .css files are more recommended though -->
     <div style="background-color: lightblue">div 1</div>
@@ -22,10 +23,10 @@
   </div>
 
   <div style="
-    margin-top: 30px; 
     display: grid;
     /* Takes any # of values correlating to # of columns in grid */
     grid-template-columns: 100px 100px 200px; 
+    margin-top: 30px; 
   ">
     <div style="background-color: lightblue">100 px</div>
     <div style="background-color: lightpink">100 px<p>text</p>
@@ -36,21 +37,21 @@
   </div>
 
   <div style="
-    margin-top: 30px; 
     display: grid;
     /* fr = fraction of available space/free space = fractional unit */
     /* In this case, 1st <div> takes 100px of viewport width, and 2nd <div> takes remainder */
     grid-template-columns: 100px 1fr; 
+    margin-top: 30px; 
   ">
     <div style="background-color: lightblue">100 px</div>
     <div style="background-color: lightpink">1 fr</div>
   </div>
 
   <div style="
-    margin-top: 30px; 
     display: grid;
     /* In this case, 1st <div> takes 100px of viewport width, and 2nd and 3rd <div>s divide remainder based on _fr:_fr ratio */
     grid-template-columns: 100px 1fr 2fr; 
+    margin-top: 30px; 
   ">
     <div style="background-color: lightblue">100 px</div>
     <div style="background-color: lightpink">1 fr</div>
@@ -58,11 +59,11 @@
   </div>
 
   <div style="
-    margin-top: 30px; 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr; 
     row-gap: 20px;
     column-gap: 20px; 
+    margin-top: 30px; 
   ">
     <div style="background-color: lightblue; height: 200px">1 fr</div>
     <div style="background-color: lightpink; height: 200px">1 fr</div>

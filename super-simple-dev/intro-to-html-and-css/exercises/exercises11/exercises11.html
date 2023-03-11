@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 11 - CSS Grid</title>
+  <link rel="stylesheet" href="exercises11.css">
+</head>
+
+<body>
+  <!-- 11a-->
+  <div style="
+    display: grid;
+    grid-template-columns: 200px 75px;
+    margin-bottom: 50px; 
+  ">
+    <div style="background-color: lightblue">200px</div>
+    <div style="background-color: lightpink">75px</div>
+  </div>
+
+  <!-- 11b-->
+  <div style="
+    display: grid;
+    grid-template-columns: 50px 1fr 75px;
+    margin-bottom: 50px; 
+  ">
+    <div style="background-color: lightblue">col1</div>
+    <div style="background-color: lightpink">col2</div>
+    <div style="background-color: lightblue">col3</div>
+  </div>
+
+  <!-- 11b-->
+  <div style="
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    row-gap: 10px;
+    column-gap: 20px; 
+  ">
+    <div style="background-color: lightpink">col1</div>
+    <div style="background-color: lightpink">col2</div>
+    <div style="background-color: lightpink">col3</div>
+    <div style="background-color: lightpink">col4</div>
+    <div style="background-color: lightpink">col1</div>
+    <div style="background-color: lightpink">col2</div>
+    <div style="background-color: lightpink">col3</div>
+    <div style="background-color: lightpink">col4</div>
+  </div>
+
+  <!-- 11d -->
+  <div class="profile-grid">
+    <div class="profile">
+      <img class="profile-pic" src="cat1.jpg" alt="Profile Pic">
+      <p class="name">Oliver</p>
+      <div class="mutuals-row">
+        <img class="mutuals-pic" src="dog2.jpg" alt="Profile Icon">
+        <p class="mutuals-count">2 mutual friends</p>
+      </div>
+      <button class="add-friend">Add Friend</button>
+    </div>
+
+    <div class="profile">
+      <img class="profile-pic" src="cat2.jpg" alt="Profile Pic">
+      <p class="name">Mimi</p>
+      <div class="mutuals-row">
+        <img class="mutuals-pic" src="dog2.jpg" alt="Profile Icon">
+        <p class="mutuals-count">3 mutual friends</p>
+      </div>
+      <button class="add-friend">Add Friend</button>
+    </div>
+
+    <div class="profile">
+      <img class="profile-pic" src="dog1.jpg" alt="Profile Pic">
+      <p class="name">Rex</p>
+      <div class="mutuals-row">
+        <img class="mutuals-pic" src="dog2.jpg" alt="Profile Icon">
+        <p class="mutuals-count">4 mutual friends</p>
+      </div>
+      <button class="add-friend">Add Friend</button>
+    </div>
+  </div>
+
+</body>
+
+</html>

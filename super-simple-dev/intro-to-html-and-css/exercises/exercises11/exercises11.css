@@ -1,0 +1,68 @@
+p {
+  font-family: Arial;
+  margin-top: 0;
+  margin-bottom: 0; 
+}
+
+.profile-grid {
+  display: grid; 
+  grid-template-columns
+}
+
+.profile {
+  display: inline-block !important;
+  vertical-align: top !important; 
+  padding-bottom: 10px;
+  border: none;
+  margin-top: 25px;
+  margin-left: 15px;
+  box-shadow: 1px 1px 5px rgb(168, 168, 168);
+}
+
+.profile-pic {
+  width: 200px;
+  height: 175px;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+.name {
+  font-size: 18px; 
+  font-weight: bold;
+  padding-left: 8px;
+  margin-bottom: 5px;
+}
+
+.mutuals-row {
+  margin-left: 8px;
+  margin-bottom: 10px; 
+}
+
+.mutuals-pic {
+  vertical-align: middle !important; 
+  object-fit: cover;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  margin-right: 4px; 
+}
+
+.mutuals-count {
+  display: inline-block !important;
+  /* Very slight change, but does align "__ mutual friends" text along the central axis more */ 
+  vertical-align: middle !important; 
+  font-size: 14px;
+  color: gray;
+}
+
+.add-friend {
+  background-color: rgba(3, 95, 215, 0.8);
+  color: white;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 18px;
+  padding-right: 18px;
+  border: none;
+  border-radius: 3px;
+  margin-left: 8px;
+}
