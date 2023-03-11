@@ -1,0 +1,45 @@
+.video-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; 
+  column-gap: 16px; 
+  row-gap: 40px; 
+}
+
+.thumbnail-row {
+  margin-bottom: 12px;
+}
+
+.thumbnail {
+  width: 100%; 
+  /* height adjusts too to maintain same height-width ratio */
+}
+
+.video-info-grid {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  column-gap: 15px; 
+}
+
+.pfp {
+  /* Takes up entire space of its <div> container (i.e., 40px as per .channel-pfp)) */
+  width: 100%;
+  border-radius: 50%;
+}
+
+.video-title {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 20px;
+  margin-bottom: 12px;
+}
+
+/* targeting both classes */
+.video-author,
+.video-stats {
+  font-size: 14px;
+  color: #606060;
+}
+
+.video-author {
+  margin-bottom: 4px;
+}

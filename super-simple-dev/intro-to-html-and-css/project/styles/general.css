@@ -1,0 +1,11 @@
+body {
+  /* Sets margins in all directions  */ 
+  margin: 0; 
+}
+
+p {
+  /* Font Stack: Arial is the backup font if Roboto doesn't load on a browser for whatever reason */
+  font-family: Roboto, Arial;
+  margin-top: 0;
+  margin-bottom: 0;
+}

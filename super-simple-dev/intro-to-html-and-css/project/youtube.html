@@ -9,69 +9,22 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
-    p {
-      /* Font Stack: Arial is the backup font if Roboto doesn't load on a browser for whatever reason */
-      font-family: Roboto, Arial;
-      margin-top: 0;
-      margin-bottom: 0;
-    }
 
-    .search-bar {
-      display: block;
-      font-size: 20px;
-    }
-
-    .video-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr; 
-      column-gap: 16px; 
-      row-gap: 40px; 
-    }
-
-    .thumbnail-row {
-      margin-bottom: 12px;
-    }
-
-    .thumbnail {
-      width: 100%; 
-      /* height adjusts too to maintain same height-width ratio */
-    }
-
-    .video-info-grid {
-      display: grid;
-      grid-template-columns: 50px 1fr;
-      column-gap: 15px; 
-    }
-
-    .pfp {
-      /* Takes up entire space of its <div> container (i.e., 40px as per .channel-pfp)) */
-      width: 100%;
-      border-radius: 50%;
-    }
-
-    .video-title {
-      font-size: 15px;
-      font-weight: 500;
-      line-height: 20px;
-      margin-bottom: 12px;
-    }
-
-    /* targeting both classes */
-    .video-author,
-    .video-stats {
-      font-size: 14px;
-      color: #606060;
-    }
-
-    .video-author {
-      margin-bottom: 4px;
-    }
-  </style>
+  <!-- Modularize CSS into appropriate files -->
+  <link rel="stylesheet" href="styles/general.css">
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/video.css">
 </head>
 
 <body>
-  <input class="search-bar" type="text" placeholder="Search"> <!-- Acts as our YouTube search bar -->
+  <div class="header">
+    <div class="left-section">left section</div>
+    <div class="middle-section">
+      <input class="search-bar" type="text" placeholder="Search">
+    </div>
+    <div class="right-section">right section</div>
+    <!-- Acts as our YouTube search bar -->
+  </div>
 
   <div class="video-grid">
     <!-- Nested Layout Technique: Most web designs can be viewed as combinations of vertical and/or horizontal sections inside one another -->

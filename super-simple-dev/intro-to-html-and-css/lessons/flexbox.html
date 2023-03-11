@@ -8,8 +8,11 @@
   <title>Flexbox Practice</title>
 </head>
 
-<body>
+<body style="padding-bottom: 1000px">
   <!-- Can do CSS grid layouts, but more flexible -->
+  <!-- If # of elements within some section CHANGE, or individual
+    content size of elements matters, then use flexbox! -->
+  <!-- In different cases, either could be used to accomplish same task -->
   <div style="
     display: flex;
     /* Aligning elements horizontally (<div>s no longer behave as block elements)  */
@@ -33,7 +36,7 @@
     <div style="
       /* Equivalent to grid's `fr` */
       flex: 1; 
-      background-color: lightpink
+      background-color: lightpink;
     ">flex: 1</div>
   </div>
 
@@ -43,20 +46,119 @@
     margin-bottom: 50px;
   ">
     <div style="
-      width: 100px; 
-      background-color: lightblue;
-    ">100 px</div>
-    <div style="
       /* Equivalent to grid's `1fr` */
       flex: 1; 
-      background-color: lightpink
+      background-color: lightblue;
     ">flex: 1</div>
+    <div style="
+      width: 100px; 
+      background-color: lightpink;
+   ">100 px</div>
     <div style="
       /* Equivalent to grid's `2fr` */
       flex: 2; 
       width: 100px; 
       background-color: lightblue;
     ">flex: 2</div>
+  </div>
+  <div style="
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 50px;
+  ">
+    <div style="
+      /* Equivalent to grid's `1fr` */
+      flex: 1; 
+      background-color: lightblue;
+    ">flex: 1</div>
+    <div style="
+      width: 100px; 
+      background-color: lightpink;
+   ">100 px</div>
+    <div style="
+      /* Equivalent to grid's `2fr` */
+      flex: 2; 
+      width: 100px; 
+      background-color: lightblue;
+    ">flex: 2</div>
+  </div>
+
+  <div style="
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    height: 70px;
+    /* (1) Width, (2) Style, (3) Colour */
+    border: 1px solid gray; 
+    margin-bottom: 50px;
+  ">
+    <div style="
+      /* Equivalent to grid's `1fr` */
+      width: 100px; 
+      background-color: lightblue;
+    ">100 px</div>
+    <div style="
+      width: 100px; 
+      background-color: lightpink;
+   ">100 px</div>
+    <div style="
+      /* Equivalent to grid's `2fr` */
+      width: 100px; 
+      background-color: lightblue;
+    ">100 px</div>
+  </div>
+
+  <div style="
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    height: 70px;
+    /* (1) Width, (2) Style, (3) Colour */
+    border: 1px solid gray; 
+    margin-bottom: 50px;
+  ">
+    <div style="
+      /* Equivalent to grid's `1fr` */
+      width: 100px; 
+      background-color: lightblue;
+    ">100 px</div>
+    <div style="
+      width: 100px; 
+      background-color: lightpink;
+   ">100 px</div>
+    <div style="
+      /* Equivalent to grid's `2fr` */
+      width: 100px; 
+      background-color: lightblue;
+    ">100 px</div>
+  </div>
+
+  <div style="
+    display: flex;
+    flex-direction: row;
+    /* Horizontal Alignment */
+    justify-content: space-between; 
+    /* Vertical Alignment */
+    align-items: center; 
+    height: 70px;
+    /* (1) Width, (2) Style, (3) Colour */
+    border: 1px solid gray; 
+    margin-bottom: 50px;
+  ">
+    <div style="
+      /* Equivalent to grid's `1fr` */
+      width: 100px; 
+      background-color: lightblue;
+    ">100 px</div>
+    <div style="
+      width: 100px; 
+      background-color: lightpink;
+   ">100 px</div>
+    <div style="
+      /* Equivalent to grid's `2fr` */
+      width: 100px; 
+      background-color: lightblue;
+    ">100 px</div>
   </div>
 
 </body>

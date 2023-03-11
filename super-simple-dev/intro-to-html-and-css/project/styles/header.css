@@ -1,0 +1,25 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 55px;
+}
+
+.left-section {
+  width: 150px;
+  background-color: lightblue;
+}
+
+.middle-section {
+  flex: 1;
+  /* Search bar stops growing after certain viewport width */
+  max-width: 500px;
+  background-color: lightpink;
+  margin-left: 60px;
+  margin-right: 35px;
+}
+
+.right-section {
+  width: 200px;
+  background-color: lightblue;
+}
