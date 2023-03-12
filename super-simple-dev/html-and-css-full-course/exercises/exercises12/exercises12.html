@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 12 - Flexbox</title>
+  <link rel="stylesheet" href="exercises12.css">
+</head>
+
+<body>
+  <!-- 12a -->
+  <div style="
+    display: flex;
+    flex-direction: row; 
+    margin-bottom: 50px;
+  ">
+    <div style="width: 200px; background-color: lightblue">200 px</div>
+    <div style="width: 75px; background-color: lightpink">75 px</div>
+  </div>
+
+  <!-- 12b -->
+  <div style="
+    display: flex;
+    flex-direction: row; 
+    margin-bottom: 50px; 
+  ">
+    <div style="width: 50px; background-color: lightblue">item1</div>
+    <div style="flex: 1; background-color: lightpink">item2</div>
+    <div style="width: 75px; background-color: lightblue">item3</div>
+  </div>
+
+  <!-- 12c -->
+  <div style="
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 50px; 
+  ">
+    <div style="background-color: lightpink">item1</div>
+    <div style="background-color: lightpink">item2</div>
+    <div style="background-color: lightpink">item3</div>
+    <div style="background-color: lightpink">item4</div>
+  </div>
+
+  <!-- 12d -->
+  <div style="
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; 
+    height: 50px; 
+    border: 1px solid gray; 
+    margin-bottom: 50px; 
+  ">
+    <div style="background-color: lightpink">item1</div>
+    <div style="background-color: lightpink">item2</div>
+  </div>
+
+  <!-- 12e (*) -->
+  <!-- Don't nest flexboxes yet! One's enough for now -->
+  <div class="container-12e">
+    <div class="flex-12e">
+      <p>Home</p>
+      <p class="count">14</p>
+    </div>
+    <div class="flex-12e">
+      <p>Notifications</p>
+      <p class="count">3</p>
+    </div>
+    <div class="flex-12e">
+      <p>Messages</p>
+      <p class="count">5</p>
+    </div>
+  </div>
+
+  <!-- 12f -->
+  <div class="flex-12f">
+    <p class="home">Home</p>
+    <input class="search" type="text" placeholder="Search">
+    <button class="download">Download</button>
+  </div>
+
+  <!-- 12g -->
+  <div class="container-12g">
+    <div class="flex1-12g">
+      <img class="pfp" src="../exercises10/cat1.jpg" alt="Oliver">
+      <div class="flex2-12g">
+        <p class="name">oliver</p>
+        <p class="desc">the cat</p>
+        <p class="popular">Popular</p>
+      </div>
+      <button class="follow">Follow</button>
+    </div>
+    <div class="flex1-12g">
+      <img class="pfp" src="../exercises10/cat2.jpg" alt="Mimi">
+      <div>
+        <p>oliver</p>
+        <p>the cat</p>
+        <p>Popular</p>
+      </div>
+      <button>Follow</button>
+    </div>
+    <div class="flex1-12g">
+      <img class="pfp" src="../exercises10/dog1.jpg" alt="Rex">
+      <div>
+        <p>oliver</p>
+        <p>the cat</p>
+        <p>Popular</p>
+      </div>
+      <button>Follow</button>
+    </div>
+  </div>
+</body>
+
+</html>
