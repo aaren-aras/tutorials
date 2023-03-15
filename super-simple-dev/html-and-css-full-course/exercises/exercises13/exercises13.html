@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 13 - Nested Flexbox</title>
+</head>
+
+<body>
+  <!-- 13a -->
+  <div style="
+    display: flex;
+    margin-bottom: 50px; 
+  ">
+    <div style="
+      display: flex;
+      justify-content: center; 
+      align-items: center; 
+      width: 100px;  
+      background-color: lightpink;
+    ">
+      <div style="
+        background-color: black;
+        color: white; 
+      ">item1</div>
+    </div>
+    <div style="
+      width: 200px; 
+      height: 50px;
+      background-color: lightblue;
+    "></div>
+  </div>
+
+  <!-- 13b -->
+  <div style="
+    display: flex;
+    margin-bottom: 50px; 
+  ">
+    <div style="
+      width: 100px; 
+      background-color: lightpink;
+    "></div>
+    <div style="
+      display: flex;
+      width: 200px;
+      height: 50px;  
+      background-color: lightblue;
+    ">
+      row1
+      <div style="
+        display: flex;
+        justify-content: space-between;
+        align-items: center;  
+        background-color: black;
+        color: white; 
+      ">
+        row2
+        row3
+      </div>
+    </div>
+  </div>
+
+  <div style="
+    display: flex;
+  "> 
+    <div style="width: 100px; height: 50px; background-color: lightpink"></div>
+    <div style="width: 200px; background-color: lightblue">text</div>
+  </div>
+
+</body>
+
+</html>

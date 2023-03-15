@@ -9,7 +9,7 @@ p {
   font-size: 14px;
   border: 1px solid rgb(155, 155, 155);
   border-radius: 5px;
-  margin-bottom: 50px; 
+  margin-bottom: 50px;
 }
 
 .flex-12e {
@@ -29,81 +29,88 @@ p {
   border-radius: 20px;
 }
 
-/* 12f */ 
+/* 12f */
 .flex-12f {
   display: flex;
-  flex-direction: row; 
-  justify-content: space-between; 
-  align-items: center; 
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 
-  /* Random: There's also hsla() and hwb() for colour notation */ 
+  /* Random: There's also hsla() and hwb() for colour notation */
   /* rgba value from exercises2.css -> .bootstrap {} */
-  font-family: Arial; 
+  font-family: Arial;
   background-color: rgba(121, 82, 179, 0.847);
-  padding: 10px 13px 10px 13px; 
-  margin-bottom: 50px; 
+  padding: 10px 13px 10px 13px;
+  margin-bottom: 50px;
 }
 
 .home {
   font-weight: bold;
   font-size: 13px;
-  color: white; 
+  color: white;
 }
 
 .search {
-  font-size: 12px; 
-  color: gray; 
-  width: 500px; 
-  border: none; 
-  border-radius: 15px; 
-  padding: 5px 15px 5px 10px; 
+  font-size: 12px;
+  color: gray;
+  width: 500px;
+  border: none;
+  border-radius: 15px;
+  padding: 5px 15px 5px 10px;
 }
 
 .download {
   background-color: transparent;
-  color: white; 
-  border: 1px solid white; 
-  padding: 5px 12px 5px 12px; 
+  color: white;
+  border: 1px solid white;
+  padding: 5px 12px 5px 12px;
 }
 
 /* 12g */
-.container-12g {
-  width: 350px;  
+.flex-12g {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 350px;
+  height: 75px; 
 }
 
-.flex1-12g {
-  display: flex;
-  flex-direction: row; 
-  justify-content: space-between;
-}
-
-.flex2-12g {
-  display: flex;
-  flex-direction: column;
-
+.info {
   flex: 1;
+  line-height: 20px;
+  margin-top: -5px;
 }
 
-.pfp{
+.pfp {
   object-fit: cover;
   width: 50px;
   height: 50px;
   border-radius: 25px;
+  margin: 0 12px 5px 12px;
 }
 
 .name {
-  font-weight: bold; 
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .desc {
-  color: gray; 
+  font-size: 14px;
+  color: gray;
 }
 
 .popular {
-  font-size: 12px; 
-  color: gray; 
+  font-size: 12.5px;
+  color: gray;
 }
 
 .follow {
-
+  font-size: 14px;
+  font-weight: bold;
+  /* hex code from buttons.css -> .tweet */
+  background-color: #1d9bf0;
+  color: white;
+  padding: 7px 11px 7px 11px;
+  border: none;
+  border-radius: 5px;
 }
