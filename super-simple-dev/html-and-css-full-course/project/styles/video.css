@@ -6,12 +6,25 @@
 }
 
 .thumbnail-row {
+  position: relative; 
   margin-bottom: 12px;
 }
 
 .thumbnail {
   width: 100%; 
   /* height adjusts too to maintain same height-width ratio */
+}
+
+.video-time {
+  font-size: 12px; 
+  font-weight: bold; 
+  position: absolute; 
+  right: 5px;
+  bottom: 8px; 
+  background-color: black;
+  color: white;
+  padding: 4px 4px 4px 4px; 
+  border-radius: 2px; 
 }
 
 .video-info-grid {

@@ -1,0 +1,6 @@
+.sidebar {
+  width: 72px; 
+  position: fixed; 
+  inset: 55px 0 0 0; 
+  background-color: white; 
+}

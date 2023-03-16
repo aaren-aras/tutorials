@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 14 - CSS Position (Pt. 1)</title>
+</head>
+
+<body style="height: 3000px">
+  <!-- 14a -->
+  <div style="
+    position: fixed;
+    /* Use top/right/bottom/left unless using all 4 (then, use inset) */ 
+    right: 20px;
+    bottom: 20px; 
+    background-color: black;
+    color: white; 
+  ">
+    bottom-right
+  </div>
+
+  <!-- 14b -->
+  <div style="
+    width: 100px;
+    position: fixed;
+    top: 0; 
+    right: 0; 
+    bottom: 0; 
+    background-color: green;
+    color: white;
+  ">
+    right sidebar
+  </div>
+
+  <!-- 14c -->
+  <!-- <div style="
+    position: fixed; 
+    inset: 0 0 0 0; 
+    background-color: black;
+  "></div> -->
+
+  <!-- 14d -->
+  <style> p { margin: 0; } </style>
+  
+  <div style="
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; 
+    position: fixed;
+    inset: 0 0 0 0; 
+    /* Creates an overlay effect */ 
+    background-color: rgba(0, 0, 0, 0.8);
+  ">
+    <div style="
+      width: 500px;
+      height: 120px; 
+      line-height: 40px; 
+      font-family: Arial; 
+      background-color: white;
+      padding: 20px 20px 20px 20px; 
+      border-radius: 10px; 
+    ">
+      <p style="
+        font-size: 26px; 
+        font-weight: bold;
+      ">
+        Modal Title
+      </p>
+      <p>This is a modal</p>
+      <button>Close</button>
+    </div>
+  </div>
+
+</body>
+
+</html>

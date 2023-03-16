@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 15 - Position Absolute and Relative</title>
+  <link rel="stylesheet" href="exercises15.css">
+</head>
+
+<body style="height: 3000px">
+  <!-- 15a -->
+  <div style="
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width: 35px; 
+    height: 35px; 
+    position: absolute;
+    top: 8px;
+    right: 10px; 
+    font-family: Arial; 
+    font-size: 16px; 
+    background-color: black;
+    color: white;
+    border-radius: 20px;  
+  ">X</div>
+
+  <!-- 15b -->
+  <div style="
+    width: 320px;
+    height: 180px; 
+    position: fixed;
+    right: 15px; 
+    bottom: 15px;
+    background-color: rgb(145, 143, 143);
+  "></div>
+
+  <!-- 15c -->
+  <div style="
+    width: 320px;
+    height: 180px; 
+    position: fixed;
+    right: 15px; 
+    bottom: 15px;
+    background-color: rgb(145, 143, 143);
+  ">
+    <div style="
+      display: flex;
+      justify-content: center;
+      align-items: center; 
+      width: 35px; 
+      height: 35px; 
+      position: absolute;
+      top: -12px;
+      left: -12px; 
+      font-family: Arial; 
+      font-size: 16px; 
+      background-color: black;
+      color: white;
+      border-radius: 20px;  
+    ">X</div>
+  </div>
+
+  <!-- 15d -->
+  <div style="
+    width: 320px;
+    height: 180px; 
+    position: fixed;
+    right: 15px; 
+    bottom: 15px;
+    font-family: Arial; 
+    background-color: rgb(145, 143, 143);
+  ">
+    <div style="
+      display: flex;
+      justify-content: center;
+      align-items: center; 
+      width: 35px; 
+      height: 35px; 
+      position: absolute;
+      top: -12px;
+      left: -12px; 
+      font-size: 16px; 
+      background-color: black;
+      color: white;
+      border-radius: 20px;  
+    ">X</div>
+    <div style="
+      position: absolute;
+      right: 10px; 
+      bottom: 10px;
+      background-color: black;
+      color: white;
+      padding: 5px 8px 5px 8px; 
+    ">0:29</div>
+  </div>
+
+  <!-- 15e -->
+  <div id="container">
+    <!-- Credits: https://bit.ly/3Fok6i8 -->
+    <img id="purple-tux" src="purple-tux.webp" alt="">
+    <div id="sale-tag">
+      20% OFF
+    </div>
+  </div>
+
+  <!-- 15f -->
+  <div id="container">
+    <img id="purple-tux" src="purple-tux.webp" alt="">
+    <div id="sale-tag">
+      20% OFF
+    </div>
+    <div id="overlay">
+      <button id="add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+
+</body>
+
+</html>

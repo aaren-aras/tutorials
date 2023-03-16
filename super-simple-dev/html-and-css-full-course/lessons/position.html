@@ -8,19 +8,88 @@
   <title>Position Practice </title>
 </head>
 
-<body>
+<!-- Increased height allows us to scroll through the page and see position effects -->
+
+<body style="
+  height: 3000px;
+  padding-top: 60px; 
+  padding-left: 80px; 
+">
+  <div style="
+    height: 50px;
+    /* With regards to browser window's borders */ 
+    position: fixed; 
+    /* These and their shorthands are ordered CW: top, right, bottom, left (TRBL) */ 
+    /* e.g., `right: 50px` and `left: 50px` stretches element to adhere to both rules */ 
+    inset: 0 0 0 0; 
+    z-index: 1; 
+    background-color: black;
+    color: white; 
+  ">header</div>
+
+  <div style="
+    width: 72px; 
+    position: fixed; 
+    inset: 50px 0 0 0; 
+    background-color: green;
+    color: white; 
+  ">
+    sidebar
+    <div style="
+      /* ***Important: relative to `fixed` parent <div>, not page */ 
+      position: absolute;
+      top: 0; 
+      right: 0;
+      background-color: red;
+      color: white; 
+    ">
+      X
+    </div>
+  </div>
+
+  <!-- Elements written below will appear in front of elements written above in code -->
+  <div style="
+    /* With regards to page's borders */ 
+    position: absolute;
+    top: 60px; 
+    right: 10px;
+    /* Equivalent to not having this line at all (default) */
+    /* Higher z-index elements appear in front of lower z-index elements */
+    /* Usually set to 100 for large projects? */  
+    z-index: 2; 
+    background-color: red;
+    color: white; 
+  ">
+    absolute
+  </div>
+
   <div style="
     width: 200px;
     height: 200px; 
-    /* Equivalent to not having this line at all */
+    /* Equivalent to not having this line at all (default); always appear at the back */
     position: static; 
     background-color: lightblue;
   ">div 1</div>
   <div style="
     width: 200px;
     height: 200px; 
+    /* Displays element normally (scrolls with the page) */ 
+    position: relative; 
     background-color: lightpink;
-  ">div 2</div>
+  ">
+    div 2
+    <div style="
+    /* ***Important: relative to `relative` parent <div>, not page */ 
+    position: absolute;
+    right: 10px; 
+    bottom: 10px;
+    z-index: 0; 
+    background-color: black;
+    color: white; 
+  ">
+      5:00
+    </div>
+  </div>
 
 </body>
 
