@@ -1,55 +1,93 @@
 .video-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr; 
-  column-gap: 16px; 
-  row-gap: 40px; 
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 16px;
+  row-gap: 40px;
 }
 
 .thumbnail-row {
-  position: relative; 
-  margin-bottom: 12px;
+  position: relative;
+  margin-bottom: 8px;
 }
 
 .thumbnail {
-  width: 100%; 
+  width: 100%;
   /* height adjusts too to maintain same height-width ratio */
 }
 
 .video-time {
-  font-size: 12px; 
-  font-weight: bold; 
-  position: absolute; 
-  right: 5px;
-  bottom: 8px; 
+  font-size: 12px;
+  font-weight: bold;
+  position: absolute;
+  right: 4px;
+  bottom: 11px;
   background-color: black;
   color: white;
-  padding: 4px 4px 4px 4px; 
-  border-radius: 2px; 
+  padding: 4px 4px 4px 4px;
+  border-radius: 2px;
 }
 
 .video-info-grid {
   display: grid;
-  grid-template-columns: 50px 1fr;
-  column-gap: 15px; 
+  grid-template-columns: 35px 1fr;
+  column-gap: 15px;
+}
+
+.pfp-wrapper {
+  display: inline-block;
+  position: relative;
 }
 
 .pfp {
   /* Takes up entire space of its <div> container (i.e., 40px as per .channel-pfp)) */
-  width: 100%;
-  border-radius: 50%;
+  width: 36px;
+  border-radius: 50px;
+}
+
+.channel-tooltip {
+  display: flex;
+  align-items: center;
+  width: 200px;
+  position: absolute;
+  top: 45px;
+  z-index: 100;
+  line-height: 20px;
+  /* Don't forget to set background; it's transparent without it lol */ 
+  background-color: white; 
+  opacity: 0;
+  padding: 10px 10px 10px 10px;
+  border-radius: 6px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+  transition: opacity 0.15s;
+  pointer-events: none;
+}
+
+.pfp-wrapper:hover .channel-tooltip {
+  opacity: 1;
+}
+
+.tooltip-pfp {
+  width: 50px;
+  border-radius: 25px;
+  margin-right: 10px;
+}
+
+.tooltip-sub-count {
+  font-size: 13px;
+  color: rgb(58, 57, 57);
 }
 
 .video-title {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
   line-height: 20px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 /* targeting both classes */
 .video-author,
 .video-stats {
-  font-size: 14px;
+  font-size: 13px;
   color: #606060;
 }
 

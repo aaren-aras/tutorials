@@ -1,6 +1,34 @@
 .sidebar {
-  width: 72px; 
-  position: fixed; 
-  inset: 55px 0 0 0; 
-  background-color: white; 
+  width: 72px;
+  position: fixed;
+  inset: 55px 0 0 0;
+  z-index: 200;
+  background-color: white;
+  padding-top: 5px; 
+}
+
+.sidebar-link {
+  display: flex;
+  flex-direction: column;
+  /* When flex-dir = column: justify-content affects VERTICAL, and 
+    align-items affects HORIZONTAL; effects are reversed! */
+  justify-content: center;
+  align-items: center;
+  height: 74px;
+  cursor: pointer; 
+}
+
+.sidebar-link:hover {
+  background-color: rgb(235, 235, 235);
+}
+
+/* Targeting <img>s within a .sidebar-link <div> */
+.sidebar-link img {
+  height: 24px;
+  margin-bottom: 5px;
+}
+
+/* Targeting <div>s within a .sidebar-link <div> */
+.sidebar-link div {
+  font-size: 10px;
 }
