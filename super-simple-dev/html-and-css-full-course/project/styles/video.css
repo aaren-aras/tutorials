@@ -5,6 +5,33 @@
   row-gap: 40px;
 }
 
+/* Only applies when viewport width <= 750px */
+@media (max-width: 750px) {
+  .video-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Only applies when 751px <= viewport width <= 999px */
+@media (min-width: 751px) and (max-width: 999px) {
+  .video-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* Only applies when viewport width >= 1000px */
+@media (min-width: 1000px) {
+  .video-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  /* 17a */
+  .video-title {
+    line-height: 24px;
+    font-size: 16px;
+  }
+}
+
 .thumbnail-row {
   position: relative;
   margin-bottom: 8px;
@@ -23,7 +50,9 @@
   bottom: 11px;
   background-color: black;
   color: white;
-  padding: 4px 4px 4px 4px;
+  /* Shorthand that applies 4px to all 4 sides; DON'T DO `padding: 4px 4px 4px 4px` */
+  /* E.g., `padding: 4px 10px` would apply 4px to top and bottom, 10px to right and left */
+  padding: 4px;
   border-radius: 2px;
 }
 
@@ -33,17 +62,18 @@
   column-gap: 15px;
 }
 
+/* 16d */ 
 .pfp-wrapper {
   display: inline-block;
   position: relative;
 }
 
 .pfp {
-  /* Takes up entire space of its <div> container (i.e., 40px as per .channel-pfp)) */
   width: 36px;
   border-radius: 50px;
 }
 
+/* 16d */ 
 .channel-tooltip {
   display: flex;
   align-items: center;
@@ -52,8 +82,8 @@
   top: 45px;
   z-index: 100;
   line-height: 20px;
-  /* Don't forget to set background; it's transparent without it lol */ 
-  background-color: white; 
+  /* Don't forget to set background; it's transparent without it lol */
+  background-color: white;
   opacity: 0;
   padding: 10px 10px 10px 10px;
   border-radius: 6px;
@@ -62,16 +92,19 @@
   pointer-events: none;
 }
 
+/* 16d */ 
 .pfp-wrapper:hover .channel-tooltip {
   opacity: 1;
 }
 
+/* 16d */ 
 .tooltip-pfp {
   width: 50px;
   border-radius: 25px;
   margin-right: 10px;
 }
 
+/* 16d */ 
 .tooltip-sub-count {
   font-size: 13px;
   color: rgb(58, 57, 57);
@@ -84,7 +117,7 @@
   margin-bottom: 10px;
 }
 
-/* targeting both classes */
+/* Targeting both classes */
 .video-author,
 .video-stats {
   font-size: 13px;

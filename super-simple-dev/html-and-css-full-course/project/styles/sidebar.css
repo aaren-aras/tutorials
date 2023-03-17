@@ -1,34 +1,82 @@
-.sidebar {
-  width: 72px;
-  position: fixed;
-  inset: 55px 0 0 0;
-  z-index: 200;
-  background-color: white;
-  padding-top: 5px; 
+/* 17c */
+/* Only applies when viewport width <= 1200px */
+@media (max-width: 1200px) {
+  .sidebar {
+    width: 72px;
+    position: fixed;
+    inset: 55px 0 0 0;
+    z-index: 200;
+    background-color: white;
+    padding-top: 5px;
+  }
+
+  .sidebar-link {
+    display: flex;
+    flex-direction: column;
+    /* When flex-dir = column: justify-content affects VERTICAL, and 
+      align-items affects HORIZONTAL; effects are reversed! */
+    justify-content: center;
+    align-items: center;
+    height: 74px;
+    cursor: pointer;
+  }
+
+  .sidebar-link:hover {
+    background-color: rgb(235, 235, 235);
+  }
+
+  /* Targeting <img>s within a .sidebar-link <div> */
+  .sidebar-link img {
+    height: 24px;
+    margin-bottom: 5px;
+  }
+
+  /* Targeting <div>s within a .sidebar-link <div> */
+  .sidebar-link div {
+    font-size: 10px;
+  }
 }
 
-.sidebar-link {
-  display: flex;
-  flex-direction: column;
-  /* When flex-dir = column: justify-content affects VERTICAL, and 
-    align-items affects HORIZONTAL; effects are reversed! */
-  justify-content: center;
-  align-items: center;
-  height: 74px;
-  cursor: pointer; 
-}
+/* 17c */
+/* Only applies when viewport width >= 1200.1px */
+@media (min-width: 1200.1px) {
+  body {
+    padding-left: 250px;
+  }
 
-.sidebar-link:hover {
-  background-color: rgb(235, 235, 235);
-}
+  .sidebar {
+    width: 225px;
+    position: fixed;
+    inset: 55px 0 0 0;
+    z-index: 200;
+    background-color: white;
+  }
 
-/* Targeting <img>s within a .sidebar-link <div> */
-.sidebar-link img {
-  height: 24px;
-  margin-bottom: 5px;
-}
+  .sidebar-link {
+    display: flex;
+    flex-direction: row;
+    /* When flex-dir = column: justify-content affects VERTICAL, and 
+      align-items affects HORIZONTAL; effects are reversed! */
+    justify-content: left;
+    align-items: center;
+    height: 74px;
+    cursor: pointer;
+    margin-bottom: -30px; 
+  }
 
-/* Targeting <div>s within a .sidebar-link <div> */
-.sidebar-link div {
-  font-size: 10px;
+  .sidebar-link:hover {
+    background-color: rgb(235, 235, 235);
+  }
+
+  /* Targeting <img>s within a .sidebar-link <div> */
+  .sidebar-link img {
+    height: 24px;
+    margin-left: 20px; 
+  }
+
+  /* Targeting <div>s within a .sidebar-link <div> */
+  .sidebar-link div {
+    font-size: 13.5px;
+    margin-left: 20px; 
+  }
 }

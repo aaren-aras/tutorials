@@ -1,1 +1,4 @@
-Finished 16a, 16b, 16c, and 16d on youtube.html, header.css, and video.css ! 
+ - 16a. Refer to youtube.html and header.css
+ - 16b. Refer to youtube.html and video.css
+ - 16c. Refer to youtube.html
+ - 16d. Refer to on youtube.html and video.css 

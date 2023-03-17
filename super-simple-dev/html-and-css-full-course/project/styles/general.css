@@ -1,28 +1,29 @@
 body {
-  height: 2000px; 
-  background-color: rgb(248, 248, 248); 
+  /* Font Stack: Arial is the backup font if Roboto doesn't load on a browser for whatever reason */
+  font-family: Roboto, Arial;
+  background-color: rgb(248, 248, 248);
   padding-top: 80px;
-  padding-right: 24px; 
-  padding-left: 96px;  
-  /* Sets margins in all directions  */ 
-  margin: 0; 
+  padding-right: 24px;
+  padding-left: 96px;
+  /* Sets margins in all directions  */
+  margin: 0 0;
 }
 
 p {
-  /* Font Stack: Arial is the backup font if Roboto doesn't load on a browser for whatever reason */
-  font-family: Roboto, Arial;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-div {
-  /* Font Stack: Arial is the backup font if Roboto doesn't load on a browser for whatever reason */
-  font-family: Roboto, Arial;
   margin-top: 0;
   margin-bottom: 0;
 }
 
 a {
-  color: black; 
-  text-decoration: none; 
+  color: black;
+  text-decoration: none;
 }
+
+/* 17a */
+/* Only applies when viewport width >= 1000px */
+@media (min-width: 1000px) {
+  body {
+    font-size: 14px; 
+  }
+}
+
