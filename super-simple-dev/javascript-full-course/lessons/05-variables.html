@@ -5,42 +5,43 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HTML CSS Review</title>
-
-  <style>
-    .red-btn {
-      background-color: red;
-      color: white;
-      border: none;
-    }
-
-    .purple-btn {
-      background-color: purple;
-      color: white;
-      border: none;
-    }
-  </style>
+  <title>Variables</title>
 </head>
 
 <body>
-  <!-- Add a tooltip with `title` attribute -->
-  <!-- Runs JS whenever button's clicked -->
-  <button class="red-btn" title="Good job!" onclick="
-    alert('You clicked me!');
-  ">
-    Hello, World!
-  </button>
-
-  <!-- 1 line break in VS Code = 1 space on browser -->
-  <p>paragraph of text
-    <button class="purple-btn">hello</button> this is!!
-  </p>
-
-  <!-- Put <script> at bottom of <body> since webpage should be created first! -->
   <script>
-    alert('Hello, World!');
-    console.log(2 + 2)
-    console.log('some' + 'text');
+    // Variables are like containers for storing data values
+    // We can use them wherever we use values
+    let variable1 = 3;
+    console.log(variable1); // Output: 3
+
+    const calculation = 2 + 2;
+    console.log(calculation); // Output: 4
+    console.log(calculation + 2); // Output: 6
+
+    const result = calculation + 2;
+    console.log(result); // Output: 6
+
+    // Can't use special chars in var names, except for $ and _
+    const message1 = '$hello';
+    const message2 = '_hello';
+    console.log(message1, message2); // Output: hello
+
+    // JavaScript inserts last semicolon automatically, but it's good practice to add it
+    console.log("1st"); console.log("2nd") // Output: 1st 2nd
+
+    variable1 = 5;
+    console.log(variable1) // Output: 5
+
+    variable1 = variable1 + 1;
+    console.log(variable1) // Output: 6
+
+    const variable2 = 3; // Can't change; use by default!
+    var variable3 = 3; // Global scope
+
+    console.log(typeof variable2); // Output: number
+    console.log(typeof message); // Output: string
+
   </script>
 </body>
 
