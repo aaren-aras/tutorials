@@ -17,6 +17,7 @@ alert("Aaren");
 2 + 2 - 5;
 
 // 1f
+// Removes everything on page and replaces it with "Good morning!"
 document.body.innerHTML = "Good morning!";
 
 // 1g
