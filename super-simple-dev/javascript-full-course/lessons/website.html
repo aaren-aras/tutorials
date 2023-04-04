@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML CSS Review</title>
+
+  <style>
+    .red-btn {
+      background-color: red;
+      color: white;
+      border: none;
+    }
+
+    .purple-btn {
+      background-color: purple;
+      color: white;
+      border: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Add a tooltip with `title` attribute -->
+  <!-- Runs JS whenever button's clicked -->
+  <button class="red-btn" title="Good job!" onclick="
+    alert('You clicked me!');
+  ">
+    Hello, World!
+  </button>
+
+  <!-- 1 line break in VS Code = 1 space on browser -->
+  <p>paragraph of text
+    <button class="purple-btn">hello</button> this is!!
+  </p>
+
+  <!-- Put <script> at bottom of <body> since webpage should be created first! -->
+  <script>
+    alert('Hello, World!');
+    console.log(2 + 2)
+    console.log('some' + 'text');
+  </script>
+</body>
+
+</html>
