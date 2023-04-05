@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 7 Exercises - Functions</title>
+</head>
+
+<body>
+  <!-- 7g -->
+  <p>
+    <button onclick="updateCalculation('1')">1</button>
+    <button onclick="updateCalculation('2')">2</button>
+    <button onclick="updateCalculation('3')">3</button>
+    <button onclick="updateCalculation(' + ')">+</button>
+  </p>
+
+  <p>
+    <button onclick="updateCalculation('4')">4</button>
+    <button onclick="updateCalculation('5')">5</button>
+    <button onclick="updateCalculation('6')">6</button>
+    <button onclick="updateCalculation(' - ')">-</button>
+  </p>
+
+  <p>
+    <button onclick="updateCalculation('7')">7</button>
+    <button onclick="updateCalculation('8')">8</button>
+    <button onclick="updateCalculation('9')">9</button>
+    <button onclick="updateCalculation(' * ')">*</button>
+  </p>
+
+  <p>
+    <button onclick="updateCalculation('0')">0</button>
+    <button onclick="updateCalculation('.')">.</button>
+    <button onclick="updateCalculation(' = ')">=</button>
+    <button onclick="updateCalculation(' / ')">/</button>
+  </p>
+
+  <button onclick="updateCalculation('Clear')">Clear</button>
+  <br><br>
+
+  <!-- 7hi -->
+  <button onclick="updateCartQuantity('Show Quantity')">Show Quantity</button>
+  <button onclick="updateCartQuantity(1)">Add to Cart</button>
+  <button onclick="updateCartQuantity(2)">+2</button>
+  <button onclick="updateCartQuantity(3)">+3</button>
+  <button onclick="updateCartQuantity(4)">+4</button>
+  <button onclick="updateCartQuantity(5)">+5</button>
+  <button onclick="updateCartQuantity(-1)">Remove from cart</button>
+  <button onclick="updateCartQuantity(-2)">-2</button>
+  <button onclick="updateCartQuantity(-3)">-3</button>
+  <button onclick="updateCartQuantity('Reset Cart')">Reset Cart</button>
+
+  <script>
+    // 7a
+    function greet1() {
+      console.log('Hello!');
+    }
+
+    greet1();
+    greet1();
+
+    // 7b
+    function greet2(name) {
+      console.log(`Hello ${name}!`);
+    }
+
+    greet2('Steve');
+    greet2('Javier');
+
+    // 7c
+    function greet3(name) {
+      // Checks if name is undefined (!(undefined) = true)
+      !name ? console.log('Hi there!') : console.log(`Hello ${name}!`);
+    }
+
+    greet3('Connie');
+    greet3();
+
+    // 7d
+    function convertToFahrenheit(celsius) {
+      return celsius * (9 / 5) + 32;
+    }
+
+    console.log(convertToFahrenheit(25));
+
+    // 7e
+    function convertToCelsius(fahrenheit) {
+      return (fahrenheit - 32) * (5 / 9);
+    }
+
+    console.log(convertToCelsius(86));
+
+    // 7f
+    function convertTemperature(degrees, unit) {
+      if (unit === 'C') return `${convertToFahrenheit(degrees)}F`;
+      else if (unit === 'F') return `${convertToCelsius(degrees)}C`;
+    }
+
+    console.log(convertTemperature(25, 'C'));
+    console.log(convertTemperature(86, 'F'));
+
+    // 7g
+    let calculation = '';
+
+    function updateCalculation(val) {
+      if (val === ' = ') {
+        calculation = eval(calculation);
+        console.log(calculation);
+      } else if (val === 'Clear') {
+        calculation = '';
+        console.log('Cleared.');
+      } else {
+        calculation += val;
+        console.log(calculation);
+      }
+    }
+
+    // 7hi
+    let cartQuantity = 0;
+
+    function updateCartQuantity(val) {
+      if (cartQuantity + val > 10) {
+        alert('The cart is full');
+        return;
+      }
+
+      if (cartQuantity + val < 0) {
+        alert('Not enough items in the cart');
+        return;
+      }
+
+      if (val === 'Show Quantity') console.log(`Cart quantity: ${cartQuantity}`);
+      else if (val === 'Reset Cart') {
+        cartQuantity = 0;
+        console.log(`Cart was reset.\nCart quantity: ${cartQuantity}`);
+      } else {
+        cartQuantity += val;
+        console.log(`Cart quantity: ${cartQuantity}`);
+      }
+    }
+  </script>
+</body>
+
+</html>

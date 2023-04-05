@@ -10,6 +10,23 @@
 
 <body>
   <script>
+    // Declaring the function (resuable code)
+    // Same naming convention as variables, but try to use verbs
+    function sayHello() {
+      console.log('Hello from sayHello()!');
+    }
+
+    // Calling/Running/Executing the function
+    sayHello();
+
+    // Parameters have same naming convention as variables as well
+    function calculateTax(cost, taxPercent = 0.1) {
+      console.log(cost * taxPercent);
+    }
+
+    // '2000', '0.2', and '5000' are called arguments
+    calculateTax(2000, 0.2);
+    calculateTax(5000); // 2nd param is undefined, so default of 0.1 is used
 
   </script>
 
