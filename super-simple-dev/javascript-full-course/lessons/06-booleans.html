@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 6 - Booleans and If-Statements</title>
+</head>
+
+<body>
+  <script>
+    console.log(typeof true);
+    console.log(typeof false);
+
+    // Comparison operators have lower priority than arithmetic operators
+    console.log(3 < 5);
+    console.log(3 > 5);
+
+    console.log(5 == '5.00'); // Output: true (doesn't check types)
+    console.log(5 === '5.00'); // Output: false (checks types)
+
+    console.log(5 != '5.00'); // Output: false (doesn't check types)
+    console.log(5 !== '5.00'); // Output: true (checks types)
+
+    /* Note: `>==` and `<==` are not valid operators (need to check type coercion and compare values separately with !==/=== AND >=/<=) */
+
+    // *Note: Variables created within { } only exist within { } (scope)
+    if (true) {
+      console.log('This will run.');
+    } else {
+      console.log('This will not run.');
+    }
+
+    const age = 15;
+
+    // Can place any code that simplifies to a boolean value in () 
+    // Curly braces are optional if only 1 line of code
+    if (age >= 16) {
+      console.log('You can drive.');
+    } else if (age >= 14) {
+      console.log('You can drive a scooter.');
+    } else {
+      console.log('You cannot drive.');
+    }
+
+    // Logical operators have lower priority than comparison operators
+    console.log(true && true); // Output: true
+    console.log(true && false); // Output: false
+
+    console.log(true || true); // Output: true
+    console.log(true || false); // Output: true
+
+    console.log(!true); // Output: false
+    console.log(!false); // Output: true
+
+    // if-else conditions work with numbers and strings as well (as shortcuts)!
+    // Truthy values: Any value that doesn't include the belowmentioned
+    // Falsy values: `false`, `0`, `''`, `null`, `undefined`, `NaN`
+    if (5) {
+      console.log('truthy');
+    }
+
+    const cartQuantity = 5;
+    // `cartQuantity > 0` = true, while `cartQuantity` = truthy 
+    /* if `cartQuantity` = 0, then.. 
+        `cartQuantity > 0` = false,
+        `cartQuantity` = falsy */
+    if (cartQuantity) {
+      console.log('Cart has products.');
+    }
+
+    console.log(!NaN); // Output: true
+    console.log('text' / 5); // Output: NaN (Not a Number)
+
+    // *Note: Can't do `const variable1;` but can do `const variable1 = undefined;`
+    let variable1;
+    console.log(variable1); // Output: undefined
+
+    // `null` discussed later! 
+
+    // Ternary operator (shortcut for if-else)
+    const result = undefined ? 'truthy' : 'falsy';
+    console.log(result) // Output: 'falsy'
+
+    /* Guard operator (&& "short circuits" when it encounters falsy operand first), essentially "guarding" the second operand from running */
+    false && console.log("'allo"); // Output: console.log doesn't show up
+
+    // E.g., the 'hello' string is protected from being logged
+    const message = false && 'hello';
+    console.log(message); // Output: false
+
+    /* Default operator (|| "short circuits" when it encounters falsy operand first), essentially "defaulting" to the second operand) */
+
+    // E.g., 'USD' serves as the "default" currency if `currency` is undefined
+    const currency = undefined || 'USD';
+    console.log(currency) // Output: 'EUR'
+
+    /* All these operators are type-coercing, meaning they try to convert
+     the operands into a common type before comparing them */
+
+  </script>
+
+</body>
+
+</html>
