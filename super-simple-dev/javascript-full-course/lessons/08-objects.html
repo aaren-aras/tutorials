@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 8 - Objects</title>
+</head>
+
+<body>
+  <script>
+    // Objects group related values together, but act as values themselves
+    const product = {
+      // "Property-value pairs"
+      name: 'socks',
+      price: 1090
+    };
+
+    console.log(typeof product);
+
+    // (1) Dot notation (use by default) [static]
+    console.log(product.name);
+    console.log(product.price);
+
+    product.name = 'underwear';
+    console.log(product.name);
+    // console.log(product.colour); // Output: undefined
+
+    product.newProp = true;
+    console.log(product);
+
+    delete product.newProp;
+    console.log(product);
+
+    const product2 = {
+      name: 'shirt',
+      // delivery-time: '1 day', // Error: Unexpected token
+      // Brackets are optional
+      ['delivery-time']: '1 day',
+      'delivery time': '1 day',
+      // Nested object
+      rating: {
+        stars: 4.5,
+        'review-count': 87
+      },
+      // Functions inside objects are called "methods"
+      func: function function1() {
+        /* Plot twist: `console.log` is a method provided by the built-in `console` object, and `log()` is one of its functions */
+        console.log('Howdy, I\'m a function inside an object');
+      }
+    };
+
+    // (2) Bracket notation (can pass anything that simplifies into a value) [dynamic]
+    console.log(product2['name']);
+    // Helps us access properties with names that are not valid identifiers
+    // console.log(product2.delivery - time); // Output: ReferenceError
+    console.log(product2['delivery-time']);
+
+    // console.log(product2.rating.'review-count'.); // Output: SyntaxError
+    // console.log(product2[rating]['review-count']); // Output: ReferenceError
+    // console.log(product2['rating'['review-count']]); // Output: undefined
+
+    console.log(product2.rating['review-count']); // Output: 87
+    console.log(product2['rating']['review-count']); // Output: 87
+
+    console.log(product2.func);
+    product2.func();
+
+    console.log(typeof product2.func); // Output: function
+    console.log(typeof console); // Output: object
+    console.log(typeof console.log); // Output: function
+
+    console.log(console);
+    console.log(Math);
+
+    /* JSON is a data format that uses less syntax than JavaScript objects:
+       - all properties must use double quotes
+       - can't support functions
+       - universal (can be understood by almost all languages), hence why it's widely used to send data between computers! */
+
+    // Converts JavaScript object to JSON object (as string)
+    console.log(JSON.stringify(product2)); // Output: {"name":"shirt","delivery-time":"1 day","delivery time":"1 day","rating":{"stars":4.5,"review-count":87}}
+
+    // Converts JSON object (as string) to JavaScript object
+    const jsonString = JSON.stringify(product2);
+    console.log(JSON.parse(jsonString));
+
+    // null = intentionally want something to be empty (as opposed to undefined)
+    function func(param = 'default') {
+      console.log(param);
+    }
+
+    func(); // Output: 'default'
+    func(undefined); // Output: 'default'
+    func(null); // Output: null
+
+    /* Due to built-in JavaScript autoboxing, objects aren't the only values with properties and methods: primitive values can too */
+    // E.g., strings are wrapped in objects (like boxes) when accessing their properties and methods
+    console.log('hello'.length); // Output: 5
+    console.log('hello'.toUpperCase()); // Output: 'HELLO'
+
+    console.log(3.0.toString()); // Output: '3' (✓)
+    console.log(true.toString()); // Output: 'true' (✓)
+
+    // console.log(null.property); // Output: TypeError (✗)
+    // console.log(undefined.method()); // Output: TypeError (✗)
+
+    /* Code for objects are REFERENCES that point to a location in memory where the object is stored */
+    const object1 = {
+      message: 'hola'
+    };
+
+    // Doesn't make a copy of object, but rather, its reference (enabling faster code)
+    // Both 'object1' and 'object2' point to the same object in memory
+    const object2 = object1;
+    // Can change the value of object through either reference (even though const since const refers to the reference, not the actual VALUE in memory)
+    object1.message = 'Message changed';
+    console.log(object1);
+
+    // Message also changed for object2
+    console.log(object2);
+
+    const object3 = {
+      message: 'Message changed'
+    };
+
+    // Compares references, not property-value pairs inside
+    console.log(object3 === object1); // Output: false
+    console.log(object2 === object1); // Output: true
+
+    const object4 = {
+      message: 'Message changed',
+      price: 799
+    };
+
+    // const message = object4.message; const price = object4.price;
+    // Shorthand called "destructuring" (when variable names == property names)
+    const { message, price } = object4;
+    console.log(message)
+    console.log(price);
+
+    // Can also use destructuring to rename variables
+    const { message: msg, price: p } = object4;
+    console.log(msg); // Output: 'Message changed'
+    console.log(p); // Output: 799
+
+    const object5 = {
+      // message: message
+      /* *Shorthand property* for when property name == variable name */
+      message,
+      // method: function function1() {
+      //   console.log('I function, therefore I method')
+      // }
+      /* *Shorthand method* for when method name == variable name */
+      method() {
+        console.log('I function, therefore I method')
+      }
+    };
+
+    console.log(object5);
+    object5.method();
+
+  </script>
+</body>
+
+</html>

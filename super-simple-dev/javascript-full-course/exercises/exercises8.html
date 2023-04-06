@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 8 Exercises - Objects</title>
+</head>
+
+<body>
+  <!-- 8h -->
+  <p>
+    <button onclick="updateCalculation('1')">1</button>
+    <button onclick="updateCalculation('2')">2</button>
+    <button onclick="updateCalculation('3')">3</button>
+    <button onclick="updateCalculation(' + ')">+</button>
+  </p>
+
+  <p>
+    <button onclick="updateCalculation('4')">4</button>
+    <button onclick="updateCalculation('5')">5</button>
+    <button onclick="updateCalculation('6')">6</button>
+    <button onclick="updateCalculation(' - ')">-</button>
+  </p>
+
+  <p>
+    <button onclick="updateCalculation('7')">7</button>
+    <button onclick="updateCalculation('8')">8</button>
+    <button onclick="updateCalculation('9')">9</button>
+    <button onclick="updateCalculation(' * ')">*</button>
+  </p>
+
+  <p>
+    <button onclick="updateCalculation('0')">0</button>
+    <button onclick="updateCalculation('.')">.</button>
+    <button onclick="updateCalculation(' = ')">=</button>
+    <button onclick="updateCalculation(' / ')">/</button>
+  </p>
+
+  <button onclick="updateCalculation('Clear')">Clear</button>
+  <br><br>
+
+  <!-- 8i -->
+  <button onclick="
+    playGame('heads');
+  ">heads</button>
+
+  <button onclick="
+    playGame('tails');
+  ">tails</button>
+
+  <script>
+    // 8a
+    const product = {
+      name: 'basketball',
+      price: 2095
+    };
+
+    console.log(product) // Output: { name: 'basketball', price: 2095 }
+
+    // 8b
+    product.price += 500;
+    console.log(product) // Output: { name: 'basketball', price: 2595 }
+
+    // 8c
+    product['delivery-time'] = '3 days';
+    console.log(product); // Output: { name: 'basketball', price: 2595, 'delivery-time': '3 days' }
+
+    // 8d
+    function comparePrice(product1, product2) {
+      return product1.price > product2.price ? product2 : product1;
+    }
+
+    const prod1 = {
+      name: 'basketball',
+      price: 2095
+    };
+
+    const prod2 = {
+      name: 'football',
+      price: 1995
+    };
+
+    console.log(comparePrice(prod1, prod2)); // Output: { name: 'football', price: 1995 }
+
+    // 8e
+    function isSameProduct(product1, product2) {
+      // Can't compare them like `product1 === product2`
+      return product1.name === product2.name && product1.price === product2.price;
+    }
+
+    const prod3 = {
+      name: 'pencil',
+      price: 293
+    };
+
+    const prod4 = {
+      name: 'eraser',
+      price: 197
+    };
+
+    console.log(isSameProduct(prod3, prod4)); // Output: false
+
+    // 8f
+    // *Note: Creates a NEW string (to alter old: `str = str.toLowerCase()`
+    console.log('Good Morning'.toLowerCase()); // Output: good morning
+
+    // 8g
+    console.log('test'.repeat(2)); // Output: test
+
+    // 8h
+    let calculation = localStorage.getItem('calculation') || '';
+
+    function updateCalculation(val) {
+      if (val === ' = ') {
+        calculation = eval(calculation);
+        saveCalculation();
+        console.log(calculation);
+      } else if (val === 'Clear') {
+        calculation = '';
+        saveCalculation();
+        console.log('Cleared.');
+      } else {
+        calculation += val;
+        saveCalculation();
+        console.log(calculation);
+      }
+    }
+
+    function saveCalculation() {
+      localStorage.setItem('calculation', calculation);
+    }
+
+    // 8ijk
+    const score = JSON.parse(localStorage.getItem('coinFlipScore')) || {
+      wins: 0,
+      losses: 0
+    };
+
+    function playGame(guess) {
+      const randNum = Math.random();
+      randNum < 0.5 ? result = 'heads' : result = 'tails';
+      guess === result ? outcome = 'win' : outcome = 'lose';
+      outcome === 'win' ? score.wins++ : score.losses++;
+      localStorage.setItem('coinFlipScore', JSON.stringify(score));
+
+      console.log(`You guessed ${guess}.. It's ${result}! You ${outcome}!`);
+      console.log(score);
+    }
+  </script>
+</body>
+
+</html>

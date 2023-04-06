@@ -83,14 +83,14 @@
     const result = undefined ? 'truthy' : 'falsy';
     console.log(result) // Output: 'falsy'
 
-    /* Guard operator (&& "short circuits" when it encounters falsy operand first), essentially "guarding" the second operand from running */
+    /* Guard operator (&& "short circuits" when it encounters falsy operand first, essentially "guarding" the second operand from running) */
     false && console.log("'allo"); // Output: console.log doesn't show up
 
     // E.g., the 'hello' string is protected from being logged
     const message = false && 'hello';
     console.log(message); // Output: false
 
-    /* Default operator (|| "short circuits" when it encounters falsy operand first), essentially "defaulting" to the second operand) */
+    /* Default operator (|| "short circuits" when it encounters truthy operand first, but "defaults" to the second operand if its falsy) */
 
     // E.g., 'USD' serves as the "default" currency if `currency` is undefined
     const currency = undefined || 'USD';
