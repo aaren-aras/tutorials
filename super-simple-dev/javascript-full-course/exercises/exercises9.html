@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 9 Exercises - Document Object Model (DOM)</title>
+</head>
+
+<body>
+  <!-- 9a -->
+  <button>9a</button>
+
+  <!-- 9b -->
+  <!-- *Note: Don't use "." at the start when declaring classes -->
+  <button class="js-second">9b</button>
+  <br><br>
+
+  <!-- 9c -->
+  <button onclick="chooseCoinSide('heads')">heads</button>
+  <button onclick="chooseCoinSide('tails')">tails</button>
+  <p class="js-coin-choice"></p>
+
+  <!-- 9def -->
+  <input class="js-name-input" type="text" placeholder="Name" onkeydown="
+    if (event.key === 'Enter') outputName();
+  ">
+  <button onclick="outputName()">Submit</button>
+  <p class="js-display-name"></p>
+  <br><br>
+
+  <!-- 9g -->
+  <h3>Amazon Shipping Calculator</h3>
+  <input class="js-cost-input" placeholder="Cost of order" onkeydown="handleCostKeyDown(event)">
+  <button onclick="calculateTotal()">Calculate</button>
+  <p class="js-total-cost"></p>
+  <br><br>
+
+  <!-- 9h -->
+  <input class="js-input-bar" type="text" onkeyup="
+    const inputElement = document.querySelector('.js-input-bar').value;
+    document.querySelector('.js-live-text').innerText = inputElement;
+  ">
+  <p class="js-live-text"></p>
+  <br><br>
+
+  <!-- 9i -->
+  <button onclick="updateCartQuantity('Show Quantity')">Show Quantity</button>
+  <button onclick="updateCartQuantity(1)">Add to Cart</button>
+  <button onclick="updateCartQuantity(2)">+2</button>
+  <button onclick="updateCartQuantity(3)">+3</button>
+  <button onclick="updateCartQuantity(4)">+4</button>
+  <button onclick="updateCartQuantity(5)">+5</button>
+  <button onclick="updateCartQuantity(-1)">Remove from cart</button>
+  <button onclick="updateCartQuantity(-2)">-2</button>
+  <button onclick="updateCartQuantity(-3)">-3</button>
+  <button onclick="updateCartQuantity('Reset Cart')">Reset Cart</button>
+  <p class="js-cart-quantity"></p>
+  <br><br>
+
+  <!-- 9j -->
+  <p>
+    <button onclick="updateCalculation('1')">1</button>
+    <button onclick="updateCalculation('2')">2</button>
+    <button onclick="updateCalculation('3')">3</button>
+    <button onclick="updateCalculation(' + ')">+</button>
+  </p>
+
+  <p>
+    <button onclick="updateCalculation('4')">4</button>
+    <button onclick="updateCalculation('5')">5</button>
+    <button onclick="updateCalculation('6')">6</button>
+    <button onclick="updateCalculation(' - ')">-</button>
+  </p>
+
+  <p>
+    <button onclick="updateCalculation('7')">7</button>
+    <button onclick="updateCalculation('8')">8</button>
+    <button onclick="updateCalculation('9')">9</button>
+    <button onclick="updateCalculation(' * ')">*</button>
+  </p>
+
+  <p>
+    <button onclick="updateCalculation('0')">0</button>
+    <button onclick="updateCalculation('.')">.</button>
+    <button onclick="updateCalculation(' = ')">=</button>
+    <button onclick="updateCalculation(' / ')">/</button>
+  </p>
+
+  <button onclick="updateCalculation('Clear')">Clear</button>
+  <p class="js-calculation"></p>
+
+  <script>
+    // 9a
+    console.log(document.querySelector('button'));
+
+    // 9b
+    // *Note: Always use `.` when selecting classes
+    document.querySelector('.js-second').innerText = '9b done!';
+
+    // 9c
+    function chooseCoinSide(choice) {
+      document.querySelector('.js-coin-choice')
+        .innerText = `You chose: ${choice}`;
+    }
+
+    // 9def 
+    function outputName() {
+      const inputElement = document.querySelector('.js-name-input').value;
+      document.querySelector('.js-display-name')
+        .innerText = `Your name is: ${inputElement}`;
+    }
+
+    // 9g
+    function handleCostKeyDown(event) {
+      if (event.key === 'Enter') calculateTotal();
+    }
+
+    function calculateTotal() {
+      const inputElement = document.querySelector('.js-cost-input');
+      let cost = Number(inputElement.value) * 100;
+      if (cost < 4000) cost += 1000;
+      document.querySelector('.js-total-cost')
+        .innerHTML = `$${cost / 100}`;
+    }
+
+    // 9i
+    let cartQuantity = 0;
+    displayCartQuantity();
+
+    function updateCartQuantity(val) {
+      if (cartQuantity + val > 10) {
+        alert('The cart is full');
+        return;
+      }
+
+      if (cartQuantity + val < 0) {
+        alert('Not enough items in the cart');
+        return;
+      }
+
+      if (val === 'Show Quantity') console.log(`Cart quantity: ${cartQuantity}`);
+      else if (val === 'Reset Cart') {
+        cartQuantity = 0;
+        displayCartQuantity();
+      } else {
+        cartQuantity += val;
+        displayCartQuantity();
+      }
+    }
+
+    function displayCartQuantity() {
+      document.querySelector('.js-cart-quantity')
+        .innerText = `Cart quantity: ${cartQuantity}`;
+    }
+
+    // 9j 
+    let calculation = localStorage.getItem('calculation') || '';
+    if (!'') displayCalculation();
+
+    function updateCalculation(val) {
+      if (val === ' = ') {
+        calculation = eval(calculation);
+        displayCalculation();
+        saveCalculation();
+      } else if (val === 'Clear') {
+        calculation = '';
+        displayCalculation();
+        saveCalculation();
+        console.log('Cleared.');
+      } else {
+        calculation += val;
+        displayCalculation();
+        saveCalculation();
+      }
+    }
+
+    function displayCalculation() {
+      document.querySelector('.js-calculation').innerText = calculation;
+    }
+
+    function saveCalculation() {
+      localStorage.setItem('calculation', calculation);
+    }
+
+  </script>
+
+</body>
+
+</html>

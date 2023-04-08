@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 9 - Document Object Model (DOM)</title>
+</head>
+
+<body>
+  <!-- DOM is just another built-in object with properties and methods, but special because it represents/MODELS the webpage, thus connecting HTML and JavaSript -->
+  <button>guten tag</button>
+  <button class="js-button">second button</button>
+
+  <script>
+    /* Overwrites <title> element (ln 8) */
+    // document.title = 'tres bien';
+    console.log(document.title);
+    console.log(document.body);
+
+    // Converts HTML into JavaScript object
+    console.log(typeof document.body); // Output: object
+
+    /* Changing value of `innerHTML` property under `body` object under `document` object with dot notation controls all HTML within <body> */
+    console.log(document.body.innerHTML);
+    // document.body.innerHTML = '<button>bonjour</button>';
+
+    // Gets us the 1st element on the page
+    console.log(document.querySelector('button').innerHTML);
+
+    // Every HTML element has `innerHTML` property, so this only changes this button's text
+    document.querySelector('button')
+      .innerHTML = 'hola';
+
+    // Searches for class instead of element since '.' (and any other CSS selector) 
+    /* Convention #1: use 'js-' prefix for classes that are used for JavaScript
+       Convention #2: use 'Element' suffix for variables containing DOM elements */
+    const buttonElement = document.querySelector('.js-button');
+    console.log(buttonElement);
+
+    /* Variable casting */
+    Number('25'); // Output: 25
+    String(25); // Output: '25'
+
+    /* Don't use strings for math! Use numbers pls */
+    // String is converted into number if used with `-`, `*`, or `/` operators
+    console.log('25' - 5); // Output: 20
+    // Number is converted into string if used with `+` operator
+    console.log('25' + 5); // Output: '255'
+
+    /* Represents browser (superset), while `document` represents webpage (subset) */
+    // We don't have to type "window" because it's implied!
+    window.document.innerHTML = "`window` is my dad!";
+    window.console.log('`window` is my dad too!')
+    window.alert('`window` is my dad three!')
+  </script>
+</body>
+
+</html>
