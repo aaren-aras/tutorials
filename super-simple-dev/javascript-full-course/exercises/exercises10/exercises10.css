@@ -1,0 +1,107 @@
+/* 10a */
+.amazon {
+  display: block;
+  font-size: 17px;
+  background-color: rgb(255, 216, 20);
+  color: black;
+  border: none;
+  padding: 7px 50px;
+  border-radius: 30px;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+/* 10b */
+.uber-request {
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 5px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.uber-schedule {
+  font-weight: bold;
+  background-color: rgb(230, 230, 230);
+  color: black;
+  padding: 14px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* 10defg */
+.toggle-btn {
+  background-color: rgb(230, 230, 230);
+  color: black;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.is-toggled {
+  background-color: black;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* 10h */
+.cost-input {
+  font-size: 15px;
+  padding: 10px;
+}
+
+.calculate-btn {
+  font-size: 15px;
+  background-color: green;
+  color: white;
+  padding: 11.5px 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.error-msg {
+  color: red;
+  margin-bottom: 30px;
+}
+
+/* 10ij */
+.calculation {
+  font-family: Arial;
+  font-size: 40px;
+  margin: auto;
+}
+
+.gray-btn,
+.clear {
+  width: 50px;
+  height: 50px;
+  background-color: rgb(51, 51, 51);
+  color: white;
+  border-radius: 25px;
+  margin-right: 3px;
+}
+
+.gray-btn {
+  font-size: 17px;
+}
+
+.clear {
+  font-size: 13px;
+}
+
+.orange-btn {
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  background-color: rgb(254, 160, 10);
+  color: white;
+  border: none;
+  border-radius: 25px;
+}

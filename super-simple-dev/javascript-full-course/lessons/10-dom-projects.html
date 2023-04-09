@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 9 Mini-Projects [UPDATED]</title>
+  <style>
+    body {
+      font-family: Arial;
+    }
+
+    /* YouTube Subscribe Button */
+    .subscribe-btn {
+      /* Property-value pairs */
+      font-weight: bold;
+      background-color: black;
+      color: white;
+      padding: 8px 14px 8px 14px;
+      border-radius: 35px;
+      margin-bottom: 30px;
+      cursor: pointer;
+    }
+
+    .is-subscribed {
+      background-color: rgb(240, 240, 240);
+      color: black;
+      border: none;
+    }
+
+    /* Rock, Paper, Scissors [UPDATED x4] */
+    /* See `10-rock-paper-scissors.html` */
+
+    /* Amazon Shipping Calculator */
+    .cost-input {
+      font-size: 15px;
+      padding: 10px;
+    }
+
+    .calculate-btn {
+      font-size: 15px;
+      background-color: green;
+      color: white;
+      padding: 11.5px 15px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- YouTube Subscribe Button -->
+  <p>YouTube Subscribe Button</p>
+  <!-- Use separate classes for CSS and JavaScript use -->
+  <button class="js-subscribe-btn subscribe-btn" onclick="subscribe()
+  ">Subscribe</button>
+
+  <!-- Rock, Paper, Scissors [UPDATED x4] -->
+  <!-- See `10-rock-paper-scissors.html`-->
+
+  <!-- Amazon Shipping Calculator -->
+  <p>Amazon Shipping Calculator</p>
+  <input class="js-cost-input cost-input" placeholder="Cost of order" onkeydown="handleCostKeyDown(event)">
+  <button class="calculate-btn" onclick="calculateTotal()">Calculate</button>
+  <p class="js-total-cost"></p>
+
+  <script>
+    /* YouTube Subscribe Button */
+    function subscribe() {
+      const btnElement = document.querySelector('.js-subscribe-btn');
+      if (btnElement.innerText === 'Subscribe') {
+        btnElement.innerText = 'Subscribed';
+        // Use `classList` object to add or remove classes
+        // *Note: '.' is not prepended, unlike `querySelector()`
+        btnElement.classList.add('is-subscribed');
+      } else {
+        btnElement.innerText = 'Subscribe';
+        btnElement.classList.remove('is-subscribed');
+      }
+    }
+
+    /* Rock, Paper, Scissors [UPDATED x4] */
+    // See `10-rock-paper-scissors.html`
+
+    /* Amazon Shipping Calculator */
+    function handleCostKeyDown(event) {
+      if (event.key === 'Enter') calculateTotal();
+    }
+
+    function calculateTotal() {
+      const inputElement = document.querySelector('.js-cost-input');
+      let cost = Number(inputElement.value);
+      if (cost < 40) cost += 10;
+
+      document.querySelector('.js-total-cost')
+        .innerHTML = `$${cost}`;
+    }
+
+  </script>
+</body>
+
+</html>

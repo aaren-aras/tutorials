@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 10 Exercises - HTML, CSS, and JavaScript Together</title>
+  <link rel="stylesheet" href="exercises10.css">
+</head>
+
+<body>
+  <!-- 10a -->
+  <button class="amazon">Add to Cart</button>
+
+  <!-- 10b -->
+  <button class="uber-request">Request now</button>
+  <button class="uber-schedule">Schedule for later</button>
+  <br><br>
+
+  <!-- 10c -->
+  <button class="js-button">Test</button>
+  <br><br>
+
+  <!-- 10defg -->
+  <!-- *Note: Don't need `document.querySelector()` when within button to be used -->
+  <button class="js-toggle-gaming toggle-btn" onclick="toggleBtn('gaming')">
+    Gaming
+  </button>
+  <button class="js-toggle-music toggle-btn" onclick="toggleBtn('music')">
+    Music
+  </button>
+  <button class="js-toggle-tech toggle-btn" onclick="toggleBtn('tech')">
+    Tech
+  </button>
+  <br><br>
+
+  <!-- 10h -->
+  <p>Amazon Shipping Calculator</p>
+  <input class="js-cost-input cost-input" placeholder="Cost of order" onkeydown="handleCostKeyDown(event)">
+  <button class="calculate-btn" onclick="calculateTotal()">Calculate</button>
+  <p class="js-total-cost"></p>
+  <p class="js-error-msg error-msg"></p>
+
+  <!-- 10ij -->
+  <p class="js-calculation calculation"></p>
+
+  <p>
+    <button class="gray-btn" onclick="updateCalculation('1')">1</button>
+    <button class="gray-btn" onclick="updateCalculation('2')">2</button>
+    <button class="gray-btn" onclick="updateCalculation('3')">3</button>
+    <button class="orange-btn" onclick="updateCalculation(' + ')">+</button>
+  </p>
+
+  <p>
+    <button class="gray-btn" onclick="updateCalculation('4')">4</button>
+    <button class="gray-btn" onclick="updateCalculation('5')">5</button>
+    <button class="gray-btn" onclick="updateCalculation('6')">6</button>
+    <button class="orange-btn" onclick="updateCalculation(' - ')">-</button>
+  </p>
+
+  <p>
+    <button class="gray-btn" onclick="updateCalculation('7')">7</button>
+    <button class="gray-btn" onclick="updateCalculation('8')">8</button>
+    <button class="gray-btn" onclick="updateCalculation('9')">9</button>
+    <button class="orange-btn" onclick="updateCalculation(' * ')">*</button>
+  </p>
+
+  <p>
+    <button class="gray-btn" onclick="updateCalculation('0')">0</button>
+    <button class="gray-btn" onclick="updateCalculation('.')">.</button>
+    <button class="gray-btn" onclick="updateCalculation(' = ')">=</button>
+    <button class="orange-btn" onclick="updateCalculation(' / ')">/</button>
+  </p>
+
+  <button class="clear gray-btn" onclick="updateCalculation('Clear')">Clear</button>
+
+  <script src="exercises10.js"></script>
+</body>
+
+</html>
