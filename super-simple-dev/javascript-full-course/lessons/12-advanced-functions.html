@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 12 - Advanced Functions</title>
+</head>
+
+<body>
+  <button class="js-btn">Click</button>
+
+  <script>
+    /* Functions are also a value type (can assign them to variables) */
+    const function1 = function greet1() { console.log('Namaste!') };
+    console.log(function1); // Output: [Function: greet]
+    console.log(typeof function1); // Output: function
+    function1(); // Output: Namaste!
+
+    // Alternatively... remove name to create "anonymous" function
+    const function2 = function () { console.log('Vanakam!') };
+
+    /* Hoisting (call function before it is declared) */
+    greet2();
+    // Doesn't work when saved as a variable
+    function greet2() { console.log('Namaskaram!') };
+
+    const object1 = {
+      num: 2,
+      // Anonymous method
+      func: function () { console.log('Heyloooo') }
+    }
+    object1.func(); // Output: Heyloooo
+
+    // Passing functions to functions
+    function run(param) {
+      param();
+    }
+    // Function being passed is a "callback" function
+    run(function () { console.log('Yeeeeo!') }); // Output: Yeeeeo!
+
+    /* Asynchronous code (doesn't wait for line to finish; just goes to the next) */
+    /* TWO params: (1) callback function, (2) delay in milliseconds */
+    setTimeout(function () {
+      console.log('I\'m third.. :(');
+      // Synchronous code
+      console.log('I\'m fourth. :/');
+    }, 3000); // Output (after 3 sec): Tik Tok, Tik Tok..
+
+    console.log('I\'m first! :)');
+
+    // Runs a function repeatedly, and returns a number
+    /* TWO params: (1) callback function, (2) delay in milliseconds */
+    setInterval(function () {
+      console.log('Interval!');
+    }, 3000); // Output (every 3 sec): Interval!
+
+    console.log('I\'m second? :O');
+
+    [
+      'eat dinner',
+      'watch youtube',
+      // `forEach()` is a method of the Array object; preferred over `for` loop
+      // Params `val` and `index` save the value and index of each element respectively 
+      'finish this course'].forEach(function (val, index) {
+        // forEach doesn't have `continue`, but you can early return
+        if (val === 'watch youtube') return;
+        console.log(val, index);
+      }); // Output: eat dinner, watch youtube, finish this course
+
+    /* Use for loops when you need to break out of the loop! */
+
+    /* Arrow functions (mostly work the same as regular) */
+    const arrowFunction = (param, param2) => {
+      console.log('=> => =>');
+      return '=>';
+    }
+
+    const regularFunction = function (param, param2) {
+      console.log(' =/> =/> =/>');
+      return ' =/>';
+    }
+
+    arrowFunction();
+    regularFunction();
+
+    // (1) Don't need () if only one param
+    const oneParam = param => {
+      console.log(param);
+    };
+
+    // (2) Don't need {} and `return` if only one line
+    const oneLine = () => 1 + 1;
+
+    [
+      'eat dinner',
+      'watch youtube',
+      // Arrow functions are recommended for (anonymous) callback functions
+      'finish this course'].forEach((val, index) => {
+        if (val === 'watch youtube') return;
+        console.log(val, index);
+      }); // Output: eat dinner, watch youtube, finish this course
+
+    const object2 = {
+      arrowMethod: () => { },
+      // Recommended syntax
+      shorthandMethod() { }
+    }
+
+    /* Event Handling */
+    /* Instead of HTML event attributes, use `addEventListener()` JS function */
+    const btnElement = document.querySelector('.js-btn');
+    // TWO params: (1) event type, (2) callback function
+    // Word after `on` is the event type (e.g., on`CLICK`, on`MOUSEOVER`, etc.)
+
+    const eventListener = () => {
+      console.log('Clicked v1!');
+    }
+
+    btnElement.addEventListener('click', eventListener);
+    btnElement.removeEventListener('click', eventListener);
+
+    // Multiple listeners for one event (can remove them individually)
+    btnElement.addEventListener('click', () => {
+      console.log('Clicked v2!');
+    });
+
+    /* More Higher-Order Array Methods! */
+    // **Note: "Higher-order" since they're functions that take functions as params
+
+    /* `filter()` creates a new array, and places current value in it if callback func returns truthy value (and not if it returns falsy) */
+    console.log([1, -3, 5].filter((value, index) => 1)); // Output: [1, -3, 5]
+    console.log([1, -3, 5].filter((value, index) => null)); // Output: []
+
+    // Shortcut `if (value >= 0) return true; else return false;`
+    console.log([1, -3, 5].filter(value => value >= 0)); // Output: [1, 5]
+
+    /* `map()` creates a new array, and places return value of callback func in it */
+    console.log([1, 1, 3].map((value, index) => 10)); // Output: [10, 10, 10]
+
+    // "Transforms" each element in the array (like math!)
+    console.log([1, 1, 3].map(value => value * 2)); // Output: [2, 2, 6]
+
+    /* Closures are functions (+ their lexical env) that always have access to a value even after it's returned, since they're kept alive in memory as long as there's a reference */
+    /* The value gets "enclosed" in the function perse */
+
+
+  </script>
+
+</body>
+
+</html>

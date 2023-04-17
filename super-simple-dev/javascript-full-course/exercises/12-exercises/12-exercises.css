@@ -1,0 +1,60 @@
+/* 12rstuvwx */
+body {
+  font-family: Arial;
+  background-color: rgb(25, 25, 25);
+  color: white;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.move-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.move-btn {
+  width: 120px;
+  height: 120px;
+  background-color: transparent;
+  border: 3px solid white;
+  border-radius: 60px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.result {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.score {
+  margin-top: 60px;
+}
+
+.reset-score-btn,
+.auto-play-btn {
+  font-size: 15px;
+  background-color: white;
+  border: none;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+.reset-score-confirm {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 14px;
+  color: white;
+  margin-top: 10px;
+}
+
+.reset-score-confirm-btn {
+  background-color: white;
+  padding: 8px 12px;
+  border: none;
+  margin-left: 15px;
+}

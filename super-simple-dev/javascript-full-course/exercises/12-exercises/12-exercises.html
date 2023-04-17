@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 12 Exercises - Advanced Functions</title>
+  <link rel="stylesheet" href="12-exercises.css">
+</head>
+
+<body>
+  <!-- 12c -->
+  <button onclick="
+    setTimeout(function() { innerText = 'Finished!' }, 1000);
+  ">Start</button>
+
+  <!-- 12d -->
+  <button onclick="
+    innerText = 'Loading...';
+    setTimeout(function() { innerText = 'Finished!' }, 1000);
+  ">Start</button>
+
+  <!-- 12ef -->
+  <button class="add-to-cart" onclick="updateText()">Add to cart</button>
+  <p class="js-added"></p>
+
+  <!-- 12ghi (*) -->
+  <button onclick="
+    messages++;
+    if (!isDisplay) {
+      displayInterval();
+      isDisplay = true;
+    }
+  ">Add</button>
+
+  <button onclick="
+    messages--;
+    if (messages === 0) {
+      stopInterval();
+      isDisplay = false;
+    }
+  ">Remove</button>
+  <br><br><br>
+
+  <!-- 12pq -->
+  <button class="js-start">Start</button>
+
+  <button class="js-add-to-cart">Add to Cart</button>
+  <p class="js-added-2"></p>
+
+  <button class="js-add">Add</button>
+  <button class="js-remove">Remove</button>
+
+  <!-- 12rstuvwx -->
+  <p class="title">Rock, Paper, Scissors</p>
+
+  <button class="move-btn js-rock-btn">
+    <img class="move-icon" src="img/rock-emoji.png">
+  </button>
+
+  <button class="move-btn js-paper-btn">
+    <img class="move-icon" src="img/paper-emoji.png">
+  </button>
+
+  <button class="move-btn js-scissors-btn">
+    <img class="move-icon" src="img/scissors-emoji.png">
+  </button>
+
+  <p class="js-result result"></p>
+  <p class="js-moves"></p>
+  <p class="js-score score"></p>
+
+  <button class="reset-score-btn js-reset-score-btn">Reset Score</button>
+  <button class="auto-play-btn js-auto-play-btn">Auto Play</button>
+  <br>
+
+  <div class="js-reset-score-confirm reset-score-confirm"></div>
+
+  <script>
+    // 12a
+    const add = function () { console.log(2 + 3) }
+    add();
+    add();
+
+    // 12b
+    function runTwice(fun) {
+      fun();
+      fun();
+    }
+
+    runTwice(function () { console.log('12b') });
+    runTwice(add);
+
+    // 12ef
+    const addedText = document.querySelector('.js-added');
+    let timeoutId;
+
+    function updateText() {
+      addedText.innerText = 'Added';
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(function () {
+        addedText.innerText = '';
+      }, 2000);
+    }
+
+    // 12ghi (*)
+    /* Replaced by 12pq code! */
+
+    // let intervalId;
+    // let isDisplay = true;
+    // let messages = 2;
+
+    // displayInterval();
+
+    // function displayInterval() {
+    //   intervalId = setInterval(function () {
+    //     if (document.title === 'App') document.title = `(${messages}) New messages`;
+    //     else document.title = 'App';
+    //   }, 1000);
+    // }
+
+    // function stopInterval() {
+    //   clearInterval(intervalId);
+    //   document.title = 'App';
+    // }
+
+    // 12jk
+    multiply = (a, b) => a * b;
+    console.log(multiply(2, 3));
+    console.log(multiply(7, 10));
+
+    // 12l 
+    function countPositive(nums) {
+      let count = 0;
+      nums.forEach(num => {
+        if (num > 0) count++;
+      });
+      return count;
+    }
+
+    console.log(countPositive([1, -3, 5]));
+    console.log(countPositive([-2, 3, -5, 7, 10]));
+
+    // 12m 
+    function addNum(array, num) {
+      return array.map(val => val + num);
+    }
+
+    console.log(addNum([1, 2, 3], 2));
+    console.log(addNum([-2, -1, 0, 99], 2));
+
+    // 12n
+    function removeEgg1(foods) {
+      return foods.filter(val => val !== 'egg');
+    }
+
+    console.log(removeEgg1(['egg', 'apple', 'egg', 'egg', 'ham']));
+
+    /* Alternatively...
+    function removeEgg(foods) {
+      return foods.filter(val => {
+        // Need `return` in here as well for explicit arrow func
+        return val !== 'egg';
+      });
+    } */
+
+    // 12o 
+    function removeEgg2(foods) {
+      let eggCount = 0;
+      return foods.filter(val => {
+        if (eggCount < 2) {
+          if (val === 'egg') eggCount++;
+          return val !== 'egg';
+        } else return val;
+      });
+    }
+
+    console.log(removeEgg2(['egg', 'apple', 'egg', 'egg', 'ham']));
+
+    /* Alternatively ...
+     function removeEgg(foods) {
+      let eggsRemoved = 0;
+
+      return foods.filter((food) => {
+        if (food === 'egg' && eggsRemoved < 2) {
+          eggsRemoved++;
+          return false;
+        } return true;
+      });
+    } */
+
+    // 12pq
+    const startBtnElement = document.querySelector('.js-start');
+    startBtnElement.addEventListener('click', () => {
+      startBtnElement.innerText = 'Loading...';
+      setTimeout(() => { startBtnElement.innerText = 'Finished!' }, 1000);
+    });
+
+    const addedText2 = document.querySelector('.js-added-2');
+    const addToCartBtnElement = document.querySelector('.js-add-to-cart');
+    let timeoutId2;
+
+    addToCartBtnElement.addEventListener('click', () => {
+      addedText2.innerText = 'Added';
+      clearTimeout(timeoutId2);
+      timeoutId2 = setTimeout(() => addedText2.innerText = '', 2000);
+    });
+
+    const addBtnElement = document.querySelector('.js-add');
+    const removeBtnElement = document.querySelector('.js-remove');
+    let intervalId2;
+    let isDisplay2 = true;
+    let messages2 = 2;
+
+    displayInterval2();
+
+    addBtnElement.addEventListener('click', () => {
+      messages2++;
+      console.log(messages2);
+      if (!isDisplay2) {
+        displayInterval2();
+        isDisplay2 = true;
+      }
+    });
+
+    removeBtnElement.addEventListener('click', () => {
+      messages2--;
+      console.log(messages2);
+
+      if (messages2 === 0) {
+        stopInterval2();
+        isDisplay2 = false;
+      }
+    })
+
+    function displayInterval2() {
+      intervalId2 = setInterval(() => {
+        if (document.title === 'App') document.title = `(${messages2}) New messages`;
+        else document.title = 'App';
+      }, 1000);
+    }
+
+    function stopInterval2() {
+      clearInterval(intervalId2);
+      document.title = 'App';
+    }
+
+  </script>
+  <script src="12-exercises.js"></script>
+</body>
+
+</html>
