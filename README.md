@@ -1,5 +1,5 @@
 # Web Dev Basics
-Welcome!
+_Welcome!_
 
 ## What You'll Find Here
 Herein lies a growing collection of web development tutorials and courses that I've personally worked through and found valuable on my journey. These will cover a range of topics, from front-end design to back-end development and everything in between. 
