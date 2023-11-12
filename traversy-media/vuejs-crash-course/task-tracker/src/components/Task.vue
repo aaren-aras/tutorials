@@ -1,9 +1,11 @@
 <template>
   <!-- Add `reminder` class if it exists, but always add `task` class -->
-  <div :class="[task.reminder ? 'reminder' : '', 'task']">
+  <!-- Create custom event to send `id` data to parent component (Tasks.vue) -->
+  <div @dblclick="$emit('toggle-reminder', task.id)" :class="[task.reminder ? 'reminder' : '', 'task']">
     <h3>
       {{ task.text }}
-      <i @click="onDelete(task.id)" class="fas fa-times"></i>
+      <!-- Kebab case is conentional for event name --> 
+      <i @click="$emit('delete-task', task.id)" class="fas fa-times"></i>
       </h3>
     <p>{{ task.day }}</p>
   </div>
@@ -15,12 +17,6 @@ export default {
   props: {
     task: Object
   },
-  methods: {
-    onDelete(id) {
-      // Create custom event to send `id` data to parent component (Tasks.vue)
-      this.$emit('delete-task', id); // Kebab case is conventional for event name
-    }
-  }
 }
 </script>
 

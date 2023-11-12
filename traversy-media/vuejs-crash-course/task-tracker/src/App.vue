@@ -1,49 +1,34 @@
 <template>
   <div class="container">
-    <Header title="Task Tracker" />
-    <Tasks :tasks="tasks" />
+    <Header 
+      @toggle-add-task="toggleAddTask" 
+      title="Task Tracker" 
+      :showAddTask="showAddTask"
+    />
+    <!-- Can pass props through `router-view` when receiver (Home.vue) isn't a component -->
+    <router-view :showAddTask="showAddTask"></router-view>
+    <Footer />
   </div>
 </template>
 
 <script>
-import Header from './components/Header'
-import Tasks from './components/Tasks'
+import Header from './components/Header.vue'
+import Footer from './components/Footer.vue'
 
 export default {
   name: 'App',
   components: {
     Header,
-    Tasks
+    Footer
   },
   data() {
     return {
-      tasks: []
+      showAddTask: false
     }
   },
-  // Built-in lifecycle method called synchronously after instance has been initialized
-  created() {
-    // Typically would make an API call here to fetch data, but will hardcode for now
-    this.tasks = [
-      {
-        id: 1,
-        text: 'Doctors Appointment',
-        day: 'March 1st at 2:30pm',
-        reminder: true
-      }, 
-      {
-        id: 2,
-        text: 'Meeting at School',
-        day: 'March 3rd at 1:30pm',
-        reminder: true
-      }, 
-      {
-        id: 3,
-        text: 'Food Shopping',
-        day: 'March 3rd at 11:00am',
-        reminder: false
-      }
-    ]
-  }
+  methods: {
+    toggleAddTask() { this.showAddTask = !this.showAddTask; },
+  },
 }
 </script>
 
