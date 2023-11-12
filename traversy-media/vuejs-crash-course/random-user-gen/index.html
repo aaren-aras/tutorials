@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <!-- Using Vue from CDN -->
+  <script defer src="https://unpkg.com/vue@3.0.5"></script>
+  <script defer src="app.js"></script>
+  <title>Random User Generator</title>
+</head>
+
+<body>
+  <!-- SPAs: All Vue components/UI made w/ JS are inserted into HTML through this div -->
+  <div id="app">
+    <!-- Can't just do `src={{picture}}` or `alt={{firstName}}` -->
+    <!-- Can do `v-bind:` (or just `:`) to dynamically set HTML values w/ JS variables -->
+    <img :class="gender" :src="picture" :alt="`${firstName} ${lastName}`">
+    <h1>{{firstName}} {{lastName}}</h1>
+    <h3>Email: {{email}}</h3>
+    <button v-on:click="getUser()" :class="gender">Get Random User</button>
+  </div>
+</body>
+
+</html>
