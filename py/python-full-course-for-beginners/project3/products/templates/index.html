@@ -1,0 +1,33 @@
+<!-- Convention: Name directory "templates" b/c Django searches for THIS file when loading templates -->
+<!-- Template tags: Dynamically executes code written in b/w % signs; similar to loops and if-else -->
+<!-- Extend: Template tag for declaring parent templates (base.html) in child templates (index.html) -->
+{% extends 'base.html' %}
+
+{% block content %} <!-- Placing ALL the product names and prices into the "content" block -->
+<!-- *NOTE: Type "h1", "ul", "li", then press "TAB" to turn them into tags! -->
+    <h1>Products</h1>  <!-- <h1>: Used to display big, bold headings -->
+    <div class="row"> <!-- <div>: Defines a DIVision/section in an HTML doc -->
+        {% for product in products %} <!-- For loop runs through passed dictionary w/ value products -->
+            <div class="col">
+            <!-- Copy-pasted from Bootstrap: https://getbootstrap.com/docs/4.1/components/card/ -->
+            <!-- Used 'Code' -> 'Reformat Code' to Indent Below Code Sexily -->
+            <div class="card" style="width: 18rem;">
+                <!-- Replacing default card text with product data (image, name, price, ...) -->
+                <img class="card-img-top" src="{{ product.image_url }}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text">${{ product.price }}</p> <!-- Paragraph tag -->
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %} <!-- Django doesn't use indents like Python to put code into control flow statements -->
+    </div>
+{% endblock %}
+
+<!-- Markup: Annotates text, images, and more for display in a Web browser (e.g., bold, italicize) -->
+<!-- <ul>: Used to display a (bulleted) list of items -->
+<!-- <li>: Used to represent elements within a list -->
+<!-- {{: Similar to formatted strings and placeholders for dynamic HTML rendering -->
+<!-- e.g. <li>{{ product.name }} (${{product.price}})</li> -->
+
